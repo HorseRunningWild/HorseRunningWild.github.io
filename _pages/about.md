@@ -18,4 +18,4 @@ I do these things not for any particular purpose, but simply because I want to. 
 
 Well, if you're already tired of my ramblings and just want to get the materials quickly, then you can **click on the text** on the corresponding page to be redirected to my GitHub repository!
 
-In addition, if you wish to collaborate with me or have any suggestions for improvement, please feel free to contact me directly!Just send E-mail to `.j3540493668@outlook.com`.
+In addition, if you wish to collaborate with me or have any suggestions for improvement, please feel free to contact me directly!Just send E-mail to `j3540493668@outlook.com`.
