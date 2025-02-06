@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Try to make what I've learned to be easier to learn"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -8,57 +8,14 @@ redirect_from:
 ---
 
 {% include base_path %}
+## Do have some data to Share
+* [Recurrence of Bayesian neural network](https://github.com/HorseRunningWild/BNN-Recur),and the blog is [小白换视角轻松理解BNN+代码论文复现](https://mp.weixin.qq.com/s/P8EBPitkZ4sRMcpJfT-E1Q).
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
-
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Only have explanation of principle
+~~BUT I think they're clear and easy to understand~~
+### Reinforcement Learning Series
+* [【强化学习入门】I：基本原理与概念](https://mp.weixin.qq.com/s/pv63Hfuxfv4Qtzbex8VIig)
+* [【强化学习入门】II:从策略梯度到PPO](https://mp.weixin.qq.com/s/Ks8x2C7qKhjsEcZAJH4hhg)
+* [【强化学习入门】III：从Q-learning到DQN](https://mp.weixin.qq.com/s/F_zzPF_dw6Y1ApPJcYUC6w)
+### Tree and XGboost
+* [算法小白从决策树到XGboost](https://mp.weixin.qq.com/s/DjOZaw-LnK1YN7PbNYvNtQ)
