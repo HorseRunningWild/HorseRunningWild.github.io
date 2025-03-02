@@ -1,6 +1,6 @@
 ---
 permalink: /markdown/
-title: "Markdown"
+title: "We all wanna higher GPA,don't we?Thoug it's not everything."
 author_profile: true
 redirect_from: 
   - /md/
