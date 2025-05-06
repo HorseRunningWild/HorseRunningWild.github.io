@@ -17,6 +17,9 @@ redirect_from:
 
 ## Only have explanation of principle
 ~~BUT I think they're clear and easy to understand~~
+
+### Programming
+* [为什么我们需要if __name__ == __main__](https://mp.weixin.qq.com/s/HaLl8W0h02wamkk9qpAZYA)
 ### Reinforcement Learning Series
 * [【强化学习入门】I：基本原理与概念](https://mp.weixin.qq.com/s/pv63Hfuxfv4Qtzbex8VIig)
 * [【强化学习入门】II:从策略梯度到PPO](https://mp.weixin.qq.com/s/Ks8x2C7qKhjsEcZAJH4hhg)
@@ -24,3 +27,4 @@ redirect_from:
 
 ### Tree and XGboost
 * [算法小白从决策树到XGboost](https://mp.weixin.qq.com/s/DjOZaw-LnK1YN7PbNYvNtQ)
+
