@@ -16,8 +16,9 @@ redirect_from:
 * [Probabililty and Mathematical Statistics](https://github.com/HorseRunningWild/Pro-a-Sta-Intro-of-MZD-Thought-).And the blog is [【概率统计】必背公式+真题解](https://mp.weixin.qq.com/s/fH1nWQwR9bY_epTukC7K0w).Well ,cuz I just share a ZIP,so `.Probabililty and Mathematical Statistics` and `.Introduction of Mao Zedong Thought` share a repository.
 * [Physics Basci Experiments II](https://github.com/HorseRunningWild/Phy-Basic-Experiments-II).基础物理实验II的实验报告 `LaTeX` 模板。
 * [Experiments-in-electronic-tech](https://github.com/HorseRunningWild/Experiments-in-electronic-tech)。电子技术实验I的实验报告`LaTeX`模板。
-* [Elementary-Astronomy](https://github.com/HorseRunningWild/Elementary-Astronomy/tree/main)。基础天文学，习题解析
-* [Electron-Technique](https://github.com/HorseRunningWild/Electron-Technique)。电子技术，习题解析
+* [Elementary-Astronomy](https://github.com/HorseRunningWild/Elementary-Astronomy/tree/main)。基础天文学，习题解析。
+* [Electron-Technique](https://github.com/HorseRunningWild/Electron-Technique)。电子技术，习题解析。
+* [Atomic Physics](https://github.com/HorseRunningWild/AtomicPhysics)。原子物理学，习题解析。
   
 ## For Every Student in China
 
