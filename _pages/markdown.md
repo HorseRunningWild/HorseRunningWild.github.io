@@ -19,6 +19,7 @@ redirect_from:
 * [Elementary-Astronomy](https://github.com/HorseRunningWild/Elementary-Astronomy/tree/main)。基础天文学，习题解析。
 * [Electron-Technique](https://github.com/HorseRunningWild/Electron-Technique)。电子技术，习题解析。
 * [Atomic Physics](https://github.com/HorseRunningWild/AtomicPhysics)。原子物理学，习题解析。
+* [Thermodynamics](https://github.com/HorseRunningWild/Thermodynamics)。热力学与统计物理，习题解析。
   
 ## For Every Student in China
 
