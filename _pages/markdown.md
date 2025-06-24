@@ -20,6 +20,7 @@ redirect_from:
 * [Electron-Technique](https://github.com/HorseRunningWild/Electron-Technique)。电子技术，习题解析。
 * [Atomic Physics](https://github.com/HorseRunningWild/AtomicPhysics)。原子物理学，习题解析。
 * [Thermodynamics](https://github.com/HorseRunningWild/Thermodynamics)。热力学与统计物理，习题解析。
+* [Electrodynamics](https://github.com/HorseRunningWild/Electrodynamics/tree/main)。电动力学，习题解析。
   
 ## For Every Student in China
 
