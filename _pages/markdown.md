@@ -26,3 +26,4 @@ redirect_from:
 
 * [Introduction of Mao Zedong Thought](https://github.com/HorseRunningWild/Pro-a-Sta-Intro-of-MZD-Thought-).And the blog is[【中山大学毛概】笔记+思考题解析+【真题！】](https://mp.weixin.qq.com/s/sqvGo8cDfQ3PzWaZefRVdw).Well ,cuz `.Probabililty and Mathematical Statistics` is just a ZIP, they two share a repository.
 * [Outline-of-modern-history](https://github.com/HorseRunningWild/Outline-of-modern-history).`SYSU`近代史纲要期末真题。
+* [Basic Principle of Marxism](https://github.com/HorseRunningWild/BasicPrincleofMarxism).`SYSU`马克思主义基本原理复习纲要与真题。
