@@ -18,12 +18,13 @@ redirect_from:
 * [Experiments-in-electronic-tech](https://github.com/HorseRunningWild/Experiments-in-electronic-tech)。电子技术实验I的实验报告`LaTeX`模板。
 * [Elementary-Astronomy](https://github.com/HorseRunningWild/Elementary-Astronomy/tree/main)。基础天文学，习题解析。
 * [Electron-Technique](https://github.com/HorseRunningWild/Electron-Technique)。电子技术，习题解析。
-* [Atomic Physics](https://github.com/HorseRunningWild/AtomicPhysics)。原子物理学，习题解析。
-* [Thermodynamics](https://github.com/HorseRunningWild/Thermodynamics)。热力学与统计物理，习题解析。
-* [Electrodynamics](https://github.com/HorseRunningWild/Electrodynamics/tree/main)。电动力学，习题解析。
+* [Atomic Physics](https://github.com/HorseRunningWild/AtomicPhysics)。原子物理学，习题解析+回忆版题目。
+* [Thermodynamics](https://github.com/HorseRunningWild/Thermodynamics)。热力学与统计物理，习题解析+回忆版题目。
+* [Electrodynamics](https://github.com/HorseRunningWild/Electrodynamics/tree/main)。电动力学，习题解析+回忆版题目。
   
 ## For Every Student in China
 
 * [Introduction of Mao Zedong Thought](https://github.com/HorseRunningWild/Pro-a-Sta-Intro-of-MZD-Thought-).And the blog is[【中山大学毛概】笔记+思考题解析+【真题！】](https://mp.weixin.qq.com/s/sqvGo8cDfQ3PzWaZefRVdw).Well ,cuz `.Probabililty and Mathematical Statistics` is just a ZIP, they two share a repository.
 * [Outline-of-modern-history](https://github.com/HorseRunningWild/Outline-of-modern-history).`SYSU`近代史纲要期末真题。
 * [Basic Principle of Marxism](https://github.com/HorseRunningWild/BasicPrincleofMarxism).`SYSU`马克思主义基本原理复习纲要与真题。
+* [Introduction-of-XJP-thought](https://github.com/HorseRunningWild/Introduction-of-XJP-thought).`SYSU`习概复习纲要+真题。
