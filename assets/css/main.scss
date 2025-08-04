@@ -50,11 +50,14 @@ strong, b {
 
 // 为正文内容添加浅色网格背景
 // 注意：这里将 .post-content 更改为 .archive__item-body
-.archive__item-body .archive__item-excerpt {
+.archive__item-excerpt p {
   background-image:
-    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.05) 50%),
-    linear-gradient(90deg, transparent 50%, rgba(0, 0, 0, 0.05) 50%) !important; // 注意 !important
-  background-size: 20px 20px !important; // 注意 !important
-  background-color: #ffffff !important; // 注意 !important
-  // padding: 10px;
+    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.08) 50%),
+    linear-gradient(90deg, transparent 50%, rgba(0, 0, 0, 0.08) 50%);
+  background-size: 20px 20px;
+  background-color: #ffffff; // 确保底色是白色
+  // 可选：添加一点内边距让效果更明显
+  padding: 15px;
+  // 可选：添加圆角让效果更柔和
+  border-radius: 5px;
 }
