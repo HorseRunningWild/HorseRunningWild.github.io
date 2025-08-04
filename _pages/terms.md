@@ -28,3 +28,6 @@ After entering university, I admit that while I have indeed shed my former arrog
 * [国奖答辩与胡乱大一（下）](https://mp.weixin.qq.com/s/p905JKtN1HfzGhfvdV1tpg)
 * [小陈](https://mp.weixin.qq.com/s/EqxZvsBH64qGLVfXg9tU6g)
 * [见义勇为的溺死少年](https://mp.weixin.qq.com/s/S-DoZjSrosnQMITAYMhfpA)
+* [世可无天堂，不可无雨崩](https://mp.weixin.qq.com/s/muG2RXNAAzzxVVdsvrm1xQ)
+* [【物理、脑科学与机器学习】在北京实习的日子](https://mp.weixin.qq.com/s/QUv1CdXOaC6lLkGnEk2jcw)
+  
