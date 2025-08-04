@@ -47,3 +47,15 @@ body {
 strong, b {
   color: #007BFF; // 设置为蓝色，你可以根据需要更改颜色
 }
+
+// 为正文内容添加浅色网格背景
+// 注意：这里将 .post-content 更改为 .archive__item-body
+.archive__item-body {
+  background-image:
+    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.05) 50%),  // 水平线，颜色更淡一些
+    linear-gradient(90deg, transparent 50%, rgba(0, 0, 0, 0.05) 50%); // 垂直线，颜色更淡一些
+  background-size: 20px 20px; // 网格间距 20x20 像素
+  background-color: #ffffff; // 背景主色设为白色，确保网格线清晰可见
+  // 如果需要内边距让文字离边框远一点，可以添加 padding
+  // padding: 10px;
+}
