@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm a student of class of 2023 from [School of SPA](https://spa.sysu.edu.cn/), [Sun Yat-sen University](https://www.sysu.edu.cn/). My research interest includes Artificial Neural Network,Machine Learning,Brain Science.
+I'm a student of class of 2023 from [School of SPA](https://spa.sysu.edu.cn/), [Sun Yat-sen University](https://www.sysu.edu.cn/). My research interest includes Artificial Neural Network,Machine Learning,Brain Science.And right now I am an intern of Niji's Lab in [CIBR](https://www.cibr.ac.cn/science?type=blank&language=cn).
 
 But, of course, this is **NOT** the "academic personal homepage" intended for teachers, so I can still talk about interests beyond academia. For instance, I once considered myself a ~~novelist~~ (though self-proclaimed), and now I am a die-hard *movie enthusiast*, a *fitness buff* who works out or goes for long runs every day, and someone who is on the verge of becoming a half-wild *hiker*.To me, the **pursuit of my passions** and the ability to **cherish those I hold dear** are infinitely more significant than any accolades I might have received or any titles I might have held.
 
