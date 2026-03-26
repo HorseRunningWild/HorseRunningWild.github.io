@@ -1,9 +1,11 @@
 ---
 layout: archive
-title: "Try to make what I've learned to be easier to learn"
-permalink: /cv/
+title: "Publications"
+permalink: /Publications/
 author_profile: true
 redirect_from:
+  - /cv/
+  - /cv.html
   - /resume
 ---
 

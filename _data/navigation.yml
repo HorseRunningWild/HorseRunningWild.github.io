@@ -8,14 +8,17 @@ main:
 
 
   - title: "Publications"
-    url: /cv/
+    url: /Publications/
 
   - title: "Paper Interpretation"
-    url: /non-menu-page/
+    url: /Paper_Interpretation/
     
   - title: "Data Sharing"
-    url: /markdown/
+    url: /Data_Sharing/
     
   - title: "Stories"
-    url: /terms/
+    url: /Stories/
+
+  - title: "Algorithm Interpretation"
+    url: /Algorithm_Interpretation/
         

@@ -1,10 +1,11 @@
 ---
-permalink: /markdown/
-title: "We all wanna higher GPA,don't we?Though it's not everything."
+permalink: /Data_Sharing/
+title: "Data Sharing"
 author_profile: true
 redirect_from: 
-  - /md/
+  - /markdown/
   - /markdown.html
+  - /md/
 ---
 
 ## Mainly for students of science and engineering
