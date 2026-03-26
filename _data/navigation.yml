@@ -12,13 +12,14 @@ main:
 
   - title: "Paper Interpretation"
     url: /Paper_Interpretation/
-    
+
+  - title: "Algorithm Interpretation"
+    url: /Algorithm_Interpretation/
+        
   - title: "Data Sharing"
     url: /Data_Sharing/
     
   - title: "Stories"
     url: /Stories/
 
-  - title: "Algorithm Interpretation"
-    url: /Algorithm_Interpretation/
-        
+
