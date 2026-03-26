@@ -16,3 +16,10 @@ All entries in this section link directly to my Notion page. My paper interpreta
 3. Learning/Inferring Process
 4. My Understanding
 5. Reproduction
+
+
+### Bio-Inspired/Plausible
+
+### All AI
+
+### Work With Swarma
