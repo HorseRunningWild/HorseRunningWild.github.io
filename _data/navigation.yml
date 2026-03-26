@@ -6,14 +6,16 @@
 
 main:
 
+
+  - title: "Publications"
+    url: /cv/
+
+  - title: "Paper Interpretation"
+    url: /non-menu-page/
+    
+  - title: "Data Sharing"
+    url: /markdown/
+    
   - title: "Stories"
     url: /terms/
         
-  - title: "Data Sharing of MathMM"
-    url: /non-menu-page/
-    
-  - title: "Data Sharing of Algorithm"
-    url: /cv/
-    
-  - title: "Data Sharing for Higher GPA "
-    url: /markdown/
