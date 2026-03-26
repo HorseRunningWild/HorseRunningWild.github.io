@@ -1,7 +1,9 @@
 ---
-permalink: /terms/
-title: "Terms and Privacy Policy"
-modified: Forever
+permalink: /Stories/
+title: "Stories"
+redirect_from:
+  - /terms/
+  - /terms.html
 ---
 
 {% include base_path %}

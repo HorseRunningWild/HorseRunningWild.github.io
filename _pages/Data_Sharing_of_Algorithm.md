@@ -1,9 +1,10 @@
 ---
 layout: archive
-title: "Try to make what I've learned to be easier to learn"
-permalink: /cv/
+permalink: /Data_Sharing_of_Algorithm/
+title: "Data Sharing of Algorithm"
 author_profile: true
 redirect_from:
+  - /cv/
   - /resume
 ---
 

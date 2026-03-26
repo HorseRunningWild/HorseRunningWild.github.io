@@ -7,13 +7,16 @@
 main:
 
   - title: "Stories"
-    url: /terms/
+    url: /Stories/
         
   - title: "Data Sharing of MathMM"
-    url: /non-menu-page/
+    url: /Data_Sharing_of_MathMM/
     
   - title: "Data Sharing of Algorithm"
-    url: /cv/
+    url: /Data_Sharing_of_Algorithm/
     
-  - title: "Data Sharing for Higher GPA "
-    url: /markdown/
+  - title: "Data Sharing for Higher GPA"
+    url: /Data_Sharing_for_Higher_GPA/
+
+  - title: "Algorithm Interpretation"
+    url: /Algorithm_Interpretation/

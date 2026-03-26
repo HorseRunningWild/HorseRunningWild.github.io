@@ -1,10 +1,11 @@
 ---
-permalink: /non-menu-page/
-title: "Mathmatical Modeling"
+permalink: /Data_Sharing_of_MathMM/
+title: "Data Sharing of MathMM"
 author_profile: true
-redirect_from: 
-  - "/nmp/"
-  - "/nmp.html"
+redirect_from:
+  - /non-menu-page/
+  - /nmp/
+  - /nmp.html
 ---
 
 ## APMCM
