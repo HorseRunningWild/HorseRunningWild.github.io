@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "Publications"
-permalink: /Publications/
+title: "Tool Tutorial"
+permalink: /Tool_Tutorial/
 author_profile: true
 redirect_from:
   - /cv/
