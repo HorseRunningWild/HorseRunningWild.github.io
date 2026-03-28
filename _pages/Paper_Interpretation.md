@@ -19,6 +19,16 @@ All entries in this section link directly to my Notion page. My paper interpreta
 
 
 ### Bio-Inspired/Plausible
+
+<!-- 第一篇：Hippo RAG (2024 NeurIPS) -->
+<details>
+<summary>
+  <a href="https://laser-sleet-3b9.notion.site/HippoRAG-NIPS-2024-304ca7f3face80b89741f0889f51a91b" target="_blank">Hippo RAG (2024 NeurIPS)</a>
+</summary>
+<br>
+<strong>核心概括：</strong>受海马体长时记忆机制启发，用图结构（KG）解决传统 RAG 无法跨段落关联信息的问题；但仅在多跳关联任务上有优势，基础问答效果反而不如普通 RAG。
+</details>
+
 - [Hippo RAG (2024 NeurIPS)](https://laser-sleet-3b9.notion.site/HippoRAG-NIPS-2024-304ca7f3face80b89741f0889f51a91b)
 - [Hippo RAG 2 (2025 ICML)](https://laser-sleet-3b9.notion.site/Hippo-RAG-2-ICML-2025-304ca7f3face802091fbf3efeb3727c1)
 - [A Multi-Region Brain Model to Elucidate the Role of Hippocampus in Spatially Embedded Decision-Making (2025 ICML)](https://laser-sleet-3b9.notion.site/A-multi-region-brain-model-2b6ca7f3face80f395d1eb9c7d5d1750?source=copy_link)
