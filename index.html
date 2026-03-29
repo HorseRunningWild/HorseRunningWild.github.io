@@ -207,10 +207,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 400);
   }
 
-  // 绑定点击事件到所有卡片
-  document.getElementById('btn-academic').addEventListener('click', () => openPortalContent('academic'));
-  document.getElementById('btn-real-life').addEventListener('click', () => openPortalContent('real-life'));
-  document.getElementById('btn-website').addEventListener('click', () => openPortalContent('website'));
+  // 绑定点击事件到所有卡片（直接跳转到对应页面）
+  document.getElementById('btn-academic').addEventListener('click', () => {
+    window.location.href = "{{ '/about-academic/' | relative_url }}";
+  });
+  document.getElementById('btn-real-life').addEventListener('click', () => {
+    window.location.href = "{{ '/about-reallife/' | relative_url }}";
+  });
+  document.getElementById('btn-website').addEventListener('click', () => {
+    window.location.href = "{{ '/about-website/' | relative_url }}";
+  });
 
   // 返回按钮逻辑
   backBtn.addEventListener('click', function() {
