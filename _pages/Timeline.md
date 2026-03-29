@@ -227,7 +227,6 @@ redirect_from:
       <div class="card-tags">
         <span class="tag">NEXT.JS</span>
         <span class="tag">REACT</span>
-        <span class="tag">个人网站</span>
       </div>
     </div>
   </div>
