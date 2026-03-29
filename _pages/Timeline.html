@@ -1,0 +1,231 @@
+---
+permalink: /Timeline/
+title: "Timeline"
+author_profile: true
+---
+
+<!-- 筛选按钮组 -->
+<div class="filter-group">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="work">Work</button>
+  <button class="filter-btn" data-filter="education">Education</button>
+  <button class="filter-btn" data-filter="project">Project</button>
+  <button class="filter-btn" data-filter="achievement">Achievement</button>
+  <button class="filter-btn" data-filter="milestone">Milestone</button>
+</div>
+
+<!-- 时间线内容区 -->
+<div class="timeline-container">
+  <div class="timeline-item achievement">
+    <div class="timeline-card">
+      <span class="card-tag">ACHIEVEMENT</span>
+      <div class="card-date">📅 2026.03.26</div>
+      <h3 class="card-title">JOLT 一作论文发表（MFN）</h3>
+      <p class="card-desc">WebChain 于 2026 年 2 月 18 日完成发表，聚焦大规模真实网页交互轨迹数据集与训练范式。</p>
+      <div class="card-tags">
+        <span class="tag">CVPR</span>
+        <span class="tag">FIRST AUTHOR</span>
+        <span class="tag">GUI AGENT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item achievement">
+    <div class="timeline-card">
+      <span class="card-tag">ACHIEVEMENT</span>
+      <div class="card-date">📅 2026年1月5日</div>
+      <h3 class="card-title">ICLR 一作论文发表（WebFactory）</h3>
+      <p class="card-desc">WebFactory 于 2026 年 1 月 5 日完成发表，聚焦自动化 GUI Agent 强化学习训练工厂。</p>
+      <div class="card-tags">
+        <span class="tag">ICLR</span>
+        <span class="tag">FIRST AUTHOR</span>
+        <span class="tag">GUI AGENT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item milestone">
+    <div class="timeline-card">
+      <span class="card-tag">MILESTONE</span>
+      <div class="card-date">📅 2025年12月</div>
+      <h3 class="card-title">搭建自己的数字空间</h3>
+      <p class="card-desc">拥有了属于自己的一片赛博空间，搭建了这个个人网站，开始记录技术探索与人生思考。</p>
+      <div class="card-tags">
+        <span class="tag">NEXT.JS</span>
+        <span class="tag">REACT</span>
+        <span class="tag">个人网站</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item work">
+    <div class="timeline-card">
+      <span class="card-tag">WORK</span>
+      <div class="card-date">📅 2025年9月</div>
+      <h3 class="card-title">CIBR 实习</h3>
+      <p class="card-desc">加入脑科学与人工智能实验室，开展脑启发算法相关研究。</p>
+      <div class="card-tags">
+        <span class="tag">CIBR</span>
+        <span class="tag">脑启发AI</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 样式和JS直接放在这里，不会被解析 -->
+<style>
+.filter-group {
+  display: flex !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin: 0 0 30px 0 !important;
+  max-width: 900px !important;
+}
+.filter-btn {
+  padding: 8px 18px !important;
+  background: #121212 !important;
+  border: 1px solid #00ff88 !important;
+  color: #00ff88 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-weight: 500 !important;
+  font-size: 1em !important;
+  margin: 0 !important;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: #00ff88 !important;
+  color: #0a0a0a !important;
+}
+
+.timeline-container {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 30px 0 !important;
+  position: relative !important;
+}
+.timeline-container::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 2px !important;
+  height: 100% !important;
+  background: #00ff88 !important;
+  transform: translateX(-50%) !important;
+}
+
+.timeline-item {
+  margin: 30px 0 !important;
+  padding-left: 40px !important;
+  position: relative !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: block !important;
+}
+.timeline-item.filter-hide {
+  display: none !important;
+}
+
+.timeline-item::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 18px !important;
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  background: #0a0a0a !important;
+  border: 3px solid #ffd700 !important;
+  transform: translateX(-50%) !important;
+  z-index: 10 !important;
+}
+.timeline-item.milestone::before { border-color: #00ff88 !important; }
+.timeline-item.work::before { border-color: #dc3545 !important; }
+
+.timeline-card {
+  padding: 24px !important;
+  background: #171717 !important;
+  border: 1px solid #252525 !important;
+  border-radius: 10px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.card-tag {
+  display: inline-block !important;
+  padding: 4px 8px !important;
+  background: #ffd700 !important;
+  color: #0a0a0a !important;
+  border-radius: 4px !important;
+  font-size: 0.85em !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 12px !important;
+}
+.timeline-item.milestone .card-tag { background: #00ff88 !important; }
+.timeline-item.work .card-tag { background: #dc3545 !important; color: #fff !important; }
+
+.card-date {
+  color: #aaaaaa !important;
+  font-size: 0.95em !important;
+  margin-bottom: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+.card-title {
+  font-size: 1.5em !important;
+  font-weight: 700 !important;
+  margin: 0 0 12px 0 !important;
+  color: #00ccff !important;
+}
+.card-desc {
+  color: #cccccc !important;
+  line-height: 1.6 !important;
+  margin-bottom: 18px !important;
+  font-size: 1.05em !important;
+}
+.card-tags {
+  display: flex !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+.card-tags .tag {
+  padding: 5px 12px !important;
+  background: #121212 !important;
+  color: #00ff88 !important;
+  border-radius: 4px !important;
+  font-size: 0.9em !important;
+  border: 1px solid #252525 !important;
+}
+</style>
+
+<script>
+window.onload = function() {
+  const allButtons = document.querySelectorAll('.filter-btn');
+  const allItems = document.querySelectorAll('.timeline-item');
+
+  allButtons.forEach(function(button) {
+    button.onclick = function() {
+      allButtons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      this.classList.add('active');
+
+      const filterType = this.getAttribute('data-filter');
+
+      allItems.forEach(function(item) {
+        if (filterType === 'all') {
+          item.classList.remove('filter-hide');
+        } else {
+          if (item.classList.contains(filterType)) {
+            item.classList.remove('filter-hide');
+          } else {
+            item.classList.add('filter-hide');
+          }
+        }
+      });
+    };
+  });
+};
+</script>
