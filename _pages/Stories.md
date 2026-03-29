@@ -8,28 +8,223 @@ redirect_from:
 
 {% include base_path %}
 {% include toc %}
-## Too Young
-**Have you ever had a time when you were full of self-importance but felt powerless?**
 
-At least, that was always the case before I went to college. It wasn't all bad: I was ambitious, had an incredibly strong drive to act, was quite persistent about certain concepts, did some (what I thought were) good things, and also some foolish ones. In summary, the creed of my younger self was to uphold **"Passion"** and **"Kindness"**. Unfortunately, it wasn't easily understood by others, and often it ended up hurting me instead.
+<!-- 深色科技风样式 -->
+<style>
+/* 页面全局深色背景 */
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+}
 
-After the college entrance exam, I wrote a full-length novel composed of several novellas, recounting my childhood and middle school years. After all, an unexamined life is not worth living. I tried submitting my work several times, hoping in my heart to be discovered by a discerning editor, but each attempt ended in failure.
+/* 筛选按钮组 */
+.filter-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  max-width: 900px;
+}
+.filter-btn {
+  padding: 8px 16px;
+  background: #1a1a1a;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: #00ff88;
+  color: #0a0a0a;
+}
 
-Times have changed, and now, almost transformed into a **straightforward STEM guy**, when I look back at my work from those days, on one hand, I marvel at the naivety, narrow-mindedness, and obstinacy of my mindset while writing. On the other hand, I am struck by the unique way I once viewed the world, which resulted in a peculiar style and core in my writing.
+/* 时间线容器 */
+.timeline-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  position: relative;
+}
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #00ff88;
+  transform: translateX(-50%);
+}
 
-I have bid farewell to my past and feel no nostalgia for it whatsoever. However, my dear friend Tian Guanchen (majoring in Psychology at East China Normal University,`tianguanchen7@gmail.com`) is still full of curiosity about the things I wrote in the past. True to form for someone planning to pursue psychology his whole life. He inspired me with the question: does my former self still hold meaning for this world? This is a question I cannot answer and no longer intend to investigate.
+/* 时间线项 */
+.timeline-item {
+  margin: 30px 0;
+  padding-left: 40px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+/* 筛选隐藏 */
+.timeline-item.hidden {
+  display: none;
+}
 
-It depends on You.I'm not sure if I should directly open-source all of my works; perhaps no one cares anyway. So, I need the readers' opinion on this matter. Feel free to send me an email with your thoughts.
+/* 时间线节点 */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  border: 3px solid #00ff88;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.timeline-item.achievement::before {
+  border-color: #ffd700;
+}
+.timeline-item.milestone::before {
+  border-color: #00ff88;
+}
 
-## Getting Older
-### Life Open Source Project
-After entering university, I admit that while I have indeed shed my former arrogance and bias, I seem to have also developed tendencies towards selfishness and indifference. I hope that I can still maintain a sense of caring for others, which is **kindness**, as well as enthusiasm and pursuit for life, which is **passion**. Thus, I initiated the "Life Open Source Project" column.
-* [让我像马背上的哈萨克人吧](https://mp.weixin.qq.com/s/KYAcPZfrpBEx00qx6aIwOg)
-* [打工旅行与新疆的前黄金时代](https://mp.weixin.qq.com/s/LOOVxA394kBToyWuJm5azg)
-* [国奖答辩与胡乱大一（上）](https://mp.weixin.qq.com/s/d3tPDuBlLWGlEckp1cHWDA)
-* [国奖答辩与胡乱大一（下）](https://mp.weixin.qq.com/s/p905JKtN1HfzGhfvdV1tpg)
-* [小陈](https://mp.weixin.qq.com/s/EqxZvsBH64qGLVfXg9tU6g)
-* [见义勇为的溺死少年](https://mp.weixin.qq.com/s/S-DoZjSrosnQMITAYMhfpA)
-* [世可无天堂，不可无雨崩](https://mp.weixin.qq.com/s/muG2RXNAAzzxVVdsvrm1xQ)
-* [【物理、脑科学与机器学习】在北京实习的日子](https://mp.weixin.qq.com/s/QUv1CdXOaC6lLkGnEk2jcw)
-  
+/* 卡片样式 */
+.timeline-card {
+  padding: 20px;
+  background: #121212;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.card-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #1e1e1e;
+  color: #ffd700;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.timeline-item.milestone .card-tag {
+  color: #00ff88;
+}
+
+.card-date {
+  color: #aaaaaa;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+}
+.card-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #00ccff;
+}
+.card-desc {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.card-tags .tag {
+  padding: 4px 10px;
+  background: #1e1e1e;
+  color: #00ff88;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: 1px solid #2a2a2a;
+}
+</style>
+
+<!-- 筛选按钮组 -->
+<div class="filter-group">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="work">Work</button>
+  <button class="filter-btn" data-filter="education">Education</button>
+  <button class="filter-btn" data-filter="project">Project</button>
+  <button class="filter-btn" data-filter="achievement">Achievement</button>
+  <button class="filter-btn" data-filter="milestone">Milestone</button>
+</div>
+
+<!-- 时间线内容 -->
+<div class="timeline-container">
+  <div class="timeline-item achievement">
+    <div class="timeline-card">
+      <span class="card-tag">ACHIEVEMENT</span>
+      <div class="card-date">📅 2026年2月18日</div>
+      <h3 class="card-title">CVPR 一作论文发表（WebChain）</h3>
+      <p class="card-desc">WebChain 于 2026 年 2 月 18 日完成发表，聚焦大规模真实网页交互轨迹数据集与训练范式。</p>
+      <div class="card-tags">
+        <span class="tag">CVPR</span>
+        <span class="tag">FIRST AUTHOR</span>
+        <span class="tag">GUI AGENT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item achievement">
+    <div class="timeline-card">
+      <span class="card-tag">ACHIEVEMENT</span>
+      <div class="card-date">📅 2026年1月5日</div>
+      <h3 class="card-title">ICLR 一作论文发表（WebFactory）</h3>
+      <p class="card-desc">WebFactory 于 2026 年 1 月 5 日完成发表，聚焦自动化 GUI Agent 强化学习训练工厂。</p>
+      <div class="card-tags">
+        <span class="tag">ICLR</span>
+        <span class="tag">FIRST AUTHOR</span>
+        <span class="tag">GUI AGENT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline-item milestone">
+    <div class="timeline-card">
+      <span class="card-tag">MILESTONE</span>
+      <div class="card-date">📅 2025年12月</div>
+      <h3 class="card-title">搭建自己的数字空间</h3>
+      <p class="card-desc">拥有了属于自己的一片赛博空间，搭建了这个个人网站，开始记录技术探索与人生思考。</p>
+      <div class="card-tags">
+        <span class="tag">NEXT.JS</span>
+        <span class="tag">REACT</span>
+        <span class="tag">个人网站</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 极简筛选JS -->
+<script>
+const filterBtns = document.querySelectorAll('.filter-btn');
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // 切换按钮激活状态
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    const filter = btn.getAttribute('data-filter');
+    // 筛选时间项
+    timelineItems.forEach(item => {
+      if (filter === 'all' || item.classList.contains(filter)) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  });
+});
+</script>
+
+
