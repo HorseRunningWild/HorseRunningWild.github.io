@@ -4,193 +4,189 @@ permalink: /
 author_profile: true
 ---
 
+<!-- 引入艺术字体 -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-  /* --- 关键：强制全屏居中重置 --- */
+  /* --- 1. 强力布局重置（解决偏移中心问题） --- */
   #main {
-    max-width: 100% !important; /* 覆盖主题的最大宽度限制 */
+    max-width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
+    display: block !important; /* 初始不使用 flex，防止侧边栏占位 */
   }
   
-  /* 初始隐藏侧边栏及其占位 */
+  /* 初始彻底隐藏侧边栏 */
   .sidebar { 
     display: none !important; 
-    width: 0 !important;
     opacity: 0;
+    width: 0 !important;
   }
 
-  /* 移除主内容区域的偏移 */
-  .archive {
-    width: 100% !important;
-    padding-right: 0 !important;
-  }
-
-  /* --- 门户容器 --- */
+  /* --- 2. 门户容器样式 --- */
   #portal-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 85vh; /* 增加高度使垂直更居中 */
+    min-height: 80vh; /* 垂直居中 */
     width: 100%;
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: all 0.6s ease;
   }
 
   .portal-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2rem; /* 稍微加大 */
+    font-size: 3rem;
     font-style: italic;
     color: #2c3e50;
-    margin-bottom: 90px; /* 增加与卡片的距离 */
-    letter-spacing: -1px;
+    margin-bottom: 80px; /* 标题与卡片的间距 */
     text-align: center;
   }
 
-  /* --- 卡片布局与间距 --- */
+  /* --- 3. Fancy 卡片设计与大间距 --- */
   .card-row { 
     display: flex; 
-    gap: 70px; /* 增加卡片横向距离 */
-    margin-bottom: 60px; /* 增加与底部长卡片的距离 */
+    gap: 60px; /* 卡片横向间距 */
+    margin-bottom: 50px; 
   }
 
   .fancy-card {
-    position: relative;
     background: #ffffff;
-    border-radius: 24px;
-    padding: 50px 40px;
-    width: 320px; /* 稍微加宽 */
+    border-radius: 20px;
+    padding: 45px 35px;
+    width: 300px;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(0,0,0,0.02);
-    z-index: 100; /* 确保在最上层可被点击 */
+    border: 1px solid rgba(0,0,0,0.03);
+    z-index: 999;
   }
 
   .fancy-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
     border-color: #90b4ce;
   }
 
   .fancy-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 0;
     color: #34495e;
   }
 
   .fancy-card p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: #95a5a6;
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
-  /* --- 返回按钮 --- */
+  /* --- 4. 返回按钮 --- */
   #back-btn {
     display: none;
     position: fixed;
-    top: 100px;
+    top: 40px;
     left: 40px;
-    z-index: 9999;
-    background: rgba(255,255,255,0.9);
-    border: 1px solid #eee;
-    padding: 12px 20px;
+    z-index: 10000;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    font-family: 'Montserrat', sans-serif;
   }
 
-  /* --- 正文内容容器 --- */
+  /* --- 5. 内容槽位控制 --- */
   #dynamic-content {
     display: none;
     opacity: 0;
-    width: 100%;
-    max-width: 1200px; /* 点击后恢复标准内容宽度 */
-    margin: 0 auto;
     padding: 2em;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
   }
+
+  .content-slot { display: none; }
 </style>
 
+<!-- 门户界面 -->
 <div id="portal-wrapper">
   <h1 class="portal-title">Welcome to the world of Wild Horse!</h1>
   
   <div class="card-row">
-    <div class="fancy-card" id="btn-academic">
-      <h3>Who am I?</h3>
-      <p>Academic Version</p>
-    </div>
-    
-    <div class="fancy-card" id="btn-real-life">
+    <div class="fancy-card" onclick="openPage('reallife')">
       <h3>Who am I?</h3>
       <p>Real Life Version</p>
     </div>
+    
+    <div class="fancy-card" onclick="openPage('academic')">
+      <h3>Who am I?</h3>
+      <p>Academic Version</p>
+    </div>
   </div>
 
-  <div class="fancy-card" style="width: 710px;" id="btn-website">
+  <div class="fancy-card" style="width: 660px;" onclick="openPage('website')">
     <h3>What Can You Get From this Website</h3>
   </div>
 </div>
 
-<button id="back-btn">← BACK TO PORTAL</button>
+<!-- 返回按钮 -->
+<button id="back-btn" onclick="location.reload()">← BACK</button>
 
+<!-- 动态内容载入区 -->
 <div id="dynamic-content">
-  <div class="archive">
-    {% include about-content.html %}
+  <div id="slot-academic" class="content-slot">
+    {% include about-academic.html %}
+  </div>
+  <div id="slot-reallife" class="content-slot">
+    {% include about-reallife.html %}
+  </div>
+  <div id="slot-website" class="content-slot">
+    {% include about-website.html %}
   </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const portal = document.getElementById('portal-wrapper');
-  const content = document.getElementById('dynamic-content');
-  const backBtn = document.getElementById('back-btn');
-  const sidebar = document.querySelector('.sidebar');
-  const mainContainer = document.getElementById('main');
+  function openPage(type) {
+    console.log("Attempting to open:", type); // 调试信息
+    
+    const portal = document.getElementById('portal-wrapper');
+    const contentArea = document.getElementById('dynamic-content');
+    const sidebar = document.querySelector('.sidebar');
+    const backBtn = document.getElementById('back-btn');
+    const main = document.getElementById('main');
 
-  // 定义打开逻辑
-  function openPortalContent() {
-    // 1. 隐藏入口
+    // 1. 隐藏入口门户
     portal.style.opacity = '0';
+    
     setTimeout(() => {
       portal.style.display = 'none';
-      
-      // 2. 恢复 Minimal Mistakes 的标准布局
-      mainContainer.setAttribute('style', 'max-width: 1280px !important; margin: 0 auto !important; display: flex !important;');
-      
-      // 3. 激活侧边栏 (移除 display: none)
+
+      // 2. 显示选中的内容槽位
+      document.querySelectorAll('.content-slot').forEach(slot => slot.style.display = 'none');
+      const target = document.getElementById('slot-' + type);
+      if(target) target.style.display = 'block';
+
+      // 3. 恢复 Minimal Mistakes 侧边栏布局
+      main.style.display = 'flex'; // 恢复 flex 布局以承载侧边栏
       if(sidebar) {
         sidebar.setAttribute('style', 'display: block !important; opacity: 1 !important; width: 25% !important;');
       }
 
-      // 4. 显示正文内容
-      content.style.display = 'block';
+      // 4. 显示内容区域
+      contentArea.style.display = 'block';
       setTimeout(() => {
-        content.style.opacity = '1';
-        content.style.transform = 'translateY(0)';
+        contentArea.style.opacity = '1';
+        contentArea.style.transform = 'translateY(0)';
       }, 50);
 
       // 5. 显示返回按钮
       backBtn.style.display = 'block';
       window.scrollTo(0, 0);
-    }, 400);
+    }, 500);
   }
-
-  // 绑定点击事件到所有卡片
-  document.getElementById('btn-academic').addEventListener('click', openPortalContent);
-  document.getElementById('btn-real-life').addEventListener('click', openPortalContent);
-  document.getElementById('btn-website').addEventListener('click', openPortalContent);
-
-  // 返回按钮逻辑
-  backBtn.addEventListener('click', function() {
-    window.location.reload(); // 刷新页面是最干净的返回方式
-  });
-});
 </script>
