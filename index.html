@@ -4,120 +4,118 @@ permalink: /
 author_profile: true
 ---
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Noto+Serif+SC:wght@300;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-  /* --- 强力修复：初始状态隐藏侧边栏和系统内容 --- */
-  .sidebar, .archive__item, .page__title, .pagination { 
+  /* --- 关键：强制全屏居中重置 --- */
+  #main {
+    max-width: 100% !important; /* 覆盖主题的最大宽度限制 */
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* 初始隐藏侧边栏及其占位 */
+  .sidebar { 
     display: none !important; 
-    opacity: 0; 
+    width: 0 !important;
+    opacity: 0;
   }
 
-  /* --- 门户布局 --- */
+  /* 移除主内容区域的偏移 */
+  .archive {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  /* --- 门户容器 --- */
   #portal-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60vh;
-    padding-top: 50px;
-    font-family: 'Montserrat', sans-serif;
-    background: transparent;
+    min-height: 85vh; /* 增加高度使垂直更居中 */
+    width: 100%;
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
   .portal-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-size: 3.2rem; /* 稍微加大 */
     font-style: italic;
     color: #2c3e50;
-    margin-bottom: 60px;
+    margin-bottom: 90px; /* 增加与卡片的距离 */
     letter-spacing: -1px;
+    text-align: center;
   }
 
-  /* --- Fancy 卡片设计 --- */
-  .card-row { display: flex; gap: 40px; margin-bottom: 40px; }
+  /* --- 卡片布局与间距 --- */
+  .card-row { 
+    display: flex; 
+    gap: 70px; /* 增加卡片横向距离 */
+    margin-bottom: 60px; /* 增加与底部长卡片的距离 */
+  }
 
   .fancy-card {
     position: relative;
     background: #ffffff;
     border-radius: 24px;
-    padding: 40px 30px;
-    width: 280px;
+    padding: 50px 40px;
+    width: 320px; /* 稍微加宽 */
     text-align: center;
     cursor: pointer;
-    /* 柔和的多层阴影，营造悬浮感 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04), 0 2px 10px rgba(0,0,0,0.02);
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(0,0,0,0.03);
-    overflow: hidden;
-    z-index: 1000; /* 确保点击优先 */
-  }
-
-  /* 卡片内部装饰线 */
-  .fancy-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 50%; transform: translateX(-50%);
-    width: 0; height: 3px;
-    background: #90b4ce; /* 莫兰迪蓝色 */
-    transition: width 0.4s ease;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.02);
+    z-index: 100; /* 确保在最上层可被点击 */
   }
 
   .fancy-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
     border-color: #90b4ce;
   }
 
-  .fancy-card:hover::after { width: 100%; }
-
   .fancy-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin: 0;
     color: #34495e;
   }
 
   .fancy-card p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: #95a5a6;
-    margin-top: 15px;
-  }
-
-  /* --- 返回按钮：精致的半透明设计 --- */
-  #back-btn {
-    display: none;
-    position: fixed;
-    top: 120px;
-    left: 40px;
-    z-index: 9999;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid #ddd;
-    width: 50px; height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
-  #back-btn:hover { background: #fff; transform: scale(1.1); }
-
-  /* --- 内容容器动画 --- */
-  #dynamic-content {
-    display: none;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
     margin-top: 20px;
   }
 
-  .content-active {
-    display: block !important;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+  /* --- 返回按钮 --- */
+  #back-btn {
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 40px;
+    z-index: 9999;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #eee;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* --- 正文内容容器 --- */
+  #dynamic-content {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    max-width: 1200px; /* 点击后恢复标准内容宽度 */
+    margin: 0 auto;
+    padding: 2em;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
   }
 </style>
 
@@ -125,23 +123,23 @@ author_profile: true
   <h1 class="portal-title">Welcome to the world of Wild Horse!</h1>
   
   <div class="card-row">
-    <div class="fancy-card" onclick="openPage('academic')">
-      <h3>Who am I?</h3>
-      <p>Real Life Version</p>
-    </div>
-    
-    <div class="fancy-card" onclick="openPage('academic')">
+    <div class="fancy-card" id="btn-academic">
       <h3>Who am I?</h3>
       <p>Academic Version</p>
     </div>
+    
+    <div class="fancy-card" id="btn-real-life">
+      <h3>Who am I?</h3>
+      <p>Real Life Version</p>
+    </div>
   </div>
 
-  <div class="fancy-card" style="width: 600px;" onclick="openPage('academic')">
+  <div class="fancy-card" style="width: 710px;" id="btn-website">
     <h3>What Can You Get From this Website</h3>
   </div>
 </div>
 
-<button id="back-btn" onclick="closePage()">←</button>
+<button id="back-btn">← BACK TO PORTAL</button>
 
 <div id="dynamic-content">
   <div class="archive">
@@ -150,31 +148,49 @@ author_profile: true
 </div>
 
 <script>
-  function openPage(type) {
-    console.log("Card clicked: " + type); // 调试用
-    
-    // 1. 隐藏门户
-    document.getElementById('portal-wrapper').style.display = 'none';
-    
-    // 2. 强行显示侧边栏 (利用 JS 修改 style 优先级最高)
-    const sidebar = document.querySelector('.sidebar');
-    if (sidebar) {
-      sidebar.setAttribute('style', 'display: block !important; opacity: 1 !important;');
-    }
-    
-    // 3. 显示内容区域
-    const content = document.getElementById('dynamic-content');
-    content.classList.add('content-active');
-    
-    // 4. 显示返回按钮
-    document.getElementById('back-btn').style.display = 'block';
-    
-    // 平滑滚动回顶部
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+document.addEventListener('DOMContentLoaded', function() {
+  const portal = document.getElementById('portal-wrapper');
+  const content = document.getElementById('dynamic-content');
+  const backBtn = document.getElementById('back-btn');
+  const sidebar = document.querySelector('.sidebar');
+  const mainContainer = document.getElementById('main');
+
+  // 定义打开逻辑
+  function openPortalContent() {
+    // 1. 隐藏入口
+    portal.style.opacity = '0';
+    setTimeout(() => {
+      portal.style.display = 'none';
+      
+      // 2. 恢复 Minimal Mistakes 的标准布局
+      mainContainer.setAttribute('style', 'max-width: 1280px !important; margin: 0 auto !important; display: flex !important;');
+      
+      // 3. 激活侧边栏 (移除 display: none)
+      if(sidebar) {
+        sidebar.setAttribute('style', 'display: block !important; opacity: 1 !important; width: 25% !important;');
+      }
+
+      // 4. 显示正文内容
+      content.style.display = 'block';
+      setTimeout(() => {
+        content.style.opacity = '1';
+        content.style.transform = 'translateY(0)';
+      }, 50);
+
+      // 5. 显示返回按钮
+      backBtn.style.display = 'block';
+      window.scrollTo(0, 0);
+    }, 400);
   }
 
-  function closePage() {
-    // 简单高效的回退：刷新页面
-    window.location.reload();
-  }
+  // 绑定点击事件到所有卡片
+  document.getElementById('btn-academic').addEventListener('click', openPortalContent);
+  document.getElementById('btn-real-life').addEventListener('click', openPortalContent);
+  document.getElementById('btn-website').addEventListener('click', openPortalContent);
+
+  // 返回按钮逻辑
+  backBtn.addEventListener('click', function() {
+    window.location.reload(); // 刷新页面是最干净的返回方式
+  });
+});
 </script>
