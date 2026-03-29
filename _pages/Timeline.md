@@ -1,13 +1,9 @@
 ---
 permalink: /Timeline/
 title: "Timeline"
-redirect_from:
-  - /terms/
-  - /terms.html
+author_profile: true
 ---
 
-{% include base_path %}
-{% include toc %}
 
 <!-- 1. 核心样式：完全匹配你的页面UI，包含筛选隐藏逻辑 -->
 <style>
@@ -227,6 +223,7 @@ redirect_from:
       <div class="card-tags">
         <span class="tag">NEXT.JS</span>
         <span class="tag">REACT</span>
+        <span class="tag">个人网站</span>
       </div>
     </div>
   </div>
