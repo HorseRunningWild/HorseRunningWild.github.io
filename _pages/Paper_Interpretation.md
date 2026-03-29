@@ -131,7 +131,7 @@ summary a:hover {
   <span class="details-arrow"></span>
 </summary>
 <div class="details-content">
-  <p class="paper-summary"><strong>核心概括：</strong>针对 HippoRAG“实体中心导致上下文丢失、NER 依赖鲁棒性差、全场景泛化失衡”三大缺陷，引入“稠密-稀疏集成（Dense-Sparse Integration）”机制，平衡概念与语境的 trade-off。</p>
+  <p class="paper-summary"><strong>Brief Intro：</strong>针对 HippoRAG“实体中心导致上下文丢失、NER 依赖鲁棒性差、全场景泛化失衡”三大缺陷，引入“稠密-稀疏集成（Dense-Sparse Integration）”机制，平衡概念与语境的 trade-off。</p>
 </div>
 </details>
 
@@ -141,7 +141,7 @@ summary a:hover {
   <span class="details-arrow"></span>
 </summary>
 <div class="details-content">
-  <p class="paper-summary"><strong>核心概括：</strong>构建多脑区计算模型，探究海马体在空间嵌入决策中的作用，为理解生物智能的空间认知与推理机制提供计算框架。</p>
+  <p class="paper-summary"><strong>Brief Intro：</strong>构建多脑区计算模型，探究海马体在空间嵌入决策中的作用，为理解生物智能的空间认知与推理机制提供计算框架。</p>
 </div>
 </details>
 
@@ -151,7 +151,7 @@ summary a:hover {
   <span class="details-arrow"></span>
 </summary>
 <div class="details-content">
-  <p class="paper-summary"><strong>核心概括：</strong>挑战“网格细胞先于位置细胞生成、主导位置细胞”的经典假设，提出 SCAN 模型：位置细胞由内嗅皮层非网格细胞驱动，网格细胞反而由位置细胞的活动团驱动，与“位置细胞发育更早、海马失活破坏网格细胞”的实验证据一致。</p>
+  <p class="paper-summary"><strong>Brief Intro：</strong>挑战“网格细胞先于位置细胞生成、主导位置细胞”的经典假设，提出 SCAN 模型：位置细胞由内嗅皮层非网格细胞驱动，网格细胞反而由位置细胞的活动团驱动，与“位置细胞发育更早、海马失活破坏网格细胞”的实验证据一致。</p>
 </div>
 </details>
 
@@ -161,7 +161,7 @@ summary a:hover {
   <span class="details-arrow"></span>
 </summary>
 <div class="details-content">
-  <p class="paper-summary"><strong>核心概括：</strong>提出满足序列记忆 5 大约束的预测吸引子模型，通过扩展 latent state 维度将高阶 Markov Chain 降为一阶，结合吸引子去噪能力实现流式学习（无需反向传播），能处理多可能性预测、噪声鲁棒等场景。</p>
+  <p class="paper-summary"><strong>Brief Intro：</strong>提出满足序列记忆 5 大约束的预测吸引子模型，通过扩展 latent state 维度将高阶 Markov Chain 降为一阶，结合吸引子去噪能力实现流式学习（无需反向传播），能处理多可能性预测、噪声鲁棒等场景。</p>
 </div>
 </details>
 
@@ -175,7 +175,17 @@ summary a:hover {
   <span class="details-arrow"></span>
 </summary>
 <div class="details-content">
-  <p class="paper-summary"><strong>核心概括：</strong>建立现代 Hopfield 网络与 Transformer Attention 的完全等价性——Hopfield 更新规则就是 Attention 机制，β 参数对应注意力缩放因子；提供三种可直接作为深度学习层的实现，兼具生物合理性与工程实用性。</p>
+  <p class="paper-summary"><strong>Brief Intro：</strong>建立现代 Hopfield 网络与 Transformer Attention 的完全等价性——Hopfield 更新规则就是 Attention 机制，β 参数对应注意力缩放因子；提供三种可直接作为深度学习层的实现，兼具生物合理性与工程实用性。</p>
+</div>
+</details>
+
+<details>
+<summary>
+  <span><a href="https://laser-sleet-3b9.notion.site/Causal-Graphs-Meet-Thoughts-Enhancing-Complex-Reasoning-in-Graph-Augmented-LLMs-302ca7f3face8093bf7ef21f08569b9e" target="_blank">Causal Graphs Meet Thoughts: Enhancing Complex Reasoning in Graph-Augmented LLMs</a></span>
+  <span class="details-arrow"></span>
+</summary>
+<div class="details-content">
+  <p class="paper-summary"><strong>Brief Intro：</strong>一般RAG利用知识图谱的方式存在问题：所有边的重要性都有相同的，而真正存在因果性的一些边的价值由此被淹没；此外则是，检索的过程和CoT的过程实际上是脱节的。本文则旨在使用一种</p>
 </div>
 </details>
 
@@ -185,7 +195,7 @@ summary a:hover {
   <span class="details-arrow"></span>
 </summary>
 <div class="details-content">
-  <p class="paper-summary"><strong>核心概括：</strong>经典 RAG 开山之作，提出“检索+生成”的两阶段框架，用非参数化检索增强大模型的知识密集型任务能力，缓解幻觉问题。</p>
+  <p class="paper-summary"><strong>Brief Intro：</strong>经典 RAG 开山之作，提出“检索+生成”的两阶段框架，用非参数化检索增强大模型的知识密集型任务能力，缓解幻觉问题。</p>
 </div>
 </details>
 
@@ -195,7 +205,7 @@ summary a:hover {
   <span class="details-arrow"></span>
 </summary>
 <div class="details-content">
-  <p class="paper-summary"><strong>核心概括：</strong>结合纠错码（ECC）的指数级存储容量与 Hopfield 网络的强鲁棒性，构建二部图结构的 ECC-Hopfield：用稀疏 expander 图细化错误定位，能量函数定义为“违反约束的数量”，通过动力学翻转输入使约束满足，实现自解码。</p>
+  <p class="paper-summary"><strong>Brief Intro：</strong>结合纠错码（ECC）的指数级存储容量与 Hopfield 网络的强鲁棒性，构建二部图结构的 ECC-Hopfield：用稀疏 expander 图细化错误定位，能量函数定义为“违反约束的数量”，通过动力学翻转输入使约束满足，实现自解码。</p>
 </div>
 </details>
 
