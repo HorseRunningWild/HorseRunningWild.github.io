@@ -1,6 +1,6 @@
 ---
-permalink: /Stories/
-title: "Stories"
+permalink: /Timeline/
+title: "Timeline"
 redirect_from:
   - /terms/
   - /terms.html
