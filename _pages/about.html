@@ -1,0 +1,326 @@
+---
+permalink: /
+title: "Welcome to the world of Wild Horse!"
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
+---
+
+<!-- 引入优雅艺术字体：Inter，现代简洁不浮夸，适配学术场景 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- 核心样式：适配模板，柔和风格，动画效果 -->
+<style>
+/* 全局字体设置，替换模板默认字体，优雅统一 */
+#main {
+  font-family: 'Inter', sans-serif !important;
+  color: #2d3748;
+}
+
+/* 页面标题样式 */
+.welcome-title {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #1a365d;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+/* ========== 卡片容器布局 ========== */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  min-height: 60vh;
+  transition: all 0.4s ease;
+}
+/* 卡片隐藏时的状态 */
+.card-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0;
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== 卡片核心样式：柔和Fancy风格 ========== */
+.info-card {
+  width: 320px;
+  height: 180px;
+  border-radius: 20px;
+  border: 1.5px solid #2b4a78;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(43, 74, 120, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* 卡片hover效果：轻微上浮，阴影加深，柔和不突兀 */
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(43, 74, 120, 0.15);
+  border-color: #3182ce;
+}
+/* 卡片内文字样式 */
+.card-title-main {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: #1a365d;
+  margin: 0 0 8px 0;
+}
+.card-title-sub {
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #4a5568;
+  margin: 0;
+}
+
+/* ========== 内容容器：展开后的页面 ========== */
+.content-container {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transform: scale(0.98);
+}
+/* 内容展开时的状态 */
+.content-container.active {
+  opacity: 1;
+  max-height: 2000px;
+  transform: scale(1);
+  margin-bottom: 40px;
+}
+
+/* 返回按钮样式 */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1em;
+  font-weight: 500;
+  color: #3182ce;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.back-btn:hover {
+  background: #ebf8ff;
+}
+
+/* 内容区标题样式 */
+.content-title {
+  font-size: 1.6em;
+  font-weight: 600;
+  color: #1a365d;
+  margin: 0 0 20px 0;
+}
+
+/* 内容区文本、列表样式，和你原页面风格统一 */
+.content-text {
+  line-height: 1.7;
+  color: #2d3748;
+  margin-bottom: 16px;
+  font-size: 1em;
+}
+.content-text a {
+  color: #3182ce;
+  text-decoration: none;
+}
+.content-text a:hover {
+  text-decoration: underline;
+}
+.content-list {
+  margin: 10px 0 20px 20px;
+  line-height: 1.8;
+}
+.content-section-title {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 30px 0 15px 0;
+}
+.content-text code {
+  background: #f7fafc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #dd6b20;
+}
+
+/* ========== 响应式适配：手机端正常显示 ========== */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .info-card {
+    width: 100%;
+    max-width: 300px;
+    height: 160px;
+  }
+  .welcome-title {
+    font-size: 1.5em;
+  }
+}
+</style>
+
+<!-- 页面主内容 -->
+<div class="home-wrapper">
+  <!-- 欢迎标题 -->
+  <h1 class="welcome-title">Welcome to the world of Wild Horse!</h1>
+
+  <!-- 1. 初始卡片视图 -->
+  <div class="card-container" id="cardView">
+    <!-- 卡片1：Real Life Version -->
+    <div class="info-card" data-target="real-life">
+      <p class="card-title-main">Who am I?</p>
+      <p class="card-title-sub">Real Life Version</p>
+    </div>
+
+    <!-- 卡片2：Academic Version -->
+    <div class="info-card" data-target="academic">
+      <p class="card-title-main">Who am I?</p>
+      <p class="card-title-sub">Academic Version</p>
+    </div>
+
+    <!-- 卡片3：Website Value -->
+    <div class="info-card" data-target="website-value">
+      <p class="card-title-main">What Can You</p>
+      <p class="card-title-sub">Get From this Website</p>
+    </div>
+  </div>
+
+  <!-- 2. 展开内容视图 -->
+  <div class="content-container" id="real-life-content">
+    <button class="back-btn">← Back to Home</button>
+    <h2 class="content-title">Who am I? | Real Life Version</h2>
+    <!-- 这里可以自己填写生活版的自我介绍，我先给你留好模板 -->
+    <p class="content-text">
+      这里可以写你的生活版介绍，比如你的爱好、日常、故事、想分享的生活内容，和学术版形成区分。
+    </p>
+    <p class="content-text">
+      比如：我是一个喜欢骑马、摄影、写故事的物理系学生，日常除了泡实验室，也喜欢用文字记录身边人的故事，探索城市里的小众角落。
+    </p>
+  </div>
+
+  <div class="content-container" id="academic-content">
+    <button class="back-btn">← Back to Home</button>
+    <h2 class="content-title">Who am I? | Academic Version</h2>
+    <!-- 这里是你原来的about页面内容，完全保留 -->
+    <p class="content-text">
+      I'm a student of class of 2023 from <a href="https://spa.sysu.edu.cn/" target="_blank">School of Physics and Astronomy</a>, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, and right now I am an intern of <a href="https://aemc2.github.io/JiLab.github.io/people/" target="_blank">Ni Ji's Lab</a> in <a href="https://www.cibr.ac.cn/science?type=blank&language=cn" target="_blank">CIBR</a>.
+    </p>
+
+    <p class="content-text">My research interest includes</p>
+    <ul class="content-list">
+      <li>Computational modeling of brain-like strucral systems</li>
+      <li>Brain-Inspired Artificial Intelligence</li>
+    </ul>
+
+    <p class="content-text">
+      This personal homepage is an extension of my WeChat public account, which essentially does two things:
+    </p>
+    <ul class="content-list">
+      <li>Write stories about people I care about.</li>
+      <li>Focus on algorithms, GPA, and research.</li>
+    </ul>
+
+    <p class="content-text">
+      I do these things not for any particular purpose, but simply because I want to. I hope that what I care about can be of interest to others, that my reflections can provoke thought in others, and that what I learn can benefit everyone.
+    </p>
+
+    <p class="content-text">
+      In addition, if you wish to collaborate with me or have any suggestions for improvement, please feel free to contact me directly!Just send E-mail to <code>j3540493668@outlook.com</code>.
+    </p>
+
+    <h3 class="content-section-title">Education Background</h3>
+    <ul class="content-list">
+      <li>2023.09 - 2027.06, <a href="https://spa.sysu.edu.cn/" target="_blank">School of Physics and Astronomy</a>, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, Bachelor.</li>
+      <li>2025.07 - Now,  <a href="https://aemc2.github.io/JiLab.github.io/people/" target="_blank">Ni Ji's Lab</a>, <a href="https://www.cibr.ac.cn/science?type=blank&language=cn" target="_blank">Chinese Insitute for Brain Research, Beijing(CIBR)</a>, Intern.</li>
+    </ul>
+
+    <h3 class="content-section-title">Publications</h3>
+    <ul class="content-list">
+      <li>Zixing Jia, Jiawei Li, Xin Li，Ziping Chen, 2026, <a href="https://arxiv.org/abs/2511.12192" target="_blank">Multimodal Fusion Network for Micro-displacement Measurement via Michelson Interferometer</a>, <em>Optics and Laser Technology</em>.</li>
+    </ul>
+
+    <h3 class="content-section-title">Honors</h3>
+    <p class="content-text">Well, they do not matters.</p>
+  </div>
+
+  <div class="content-container" id="website-value-content">
+    <button class="back-btn">← Back to Home</button>
+    <h2 class="content-title">What Can You Get From this Website</h2>
+    <!-- 这里可以写网站的价值、内容介绍 -->
+    <p class="content-text">
+      这个网站是我的个人数字空间，你可以在这里找到这些内容：
+    </p>
+    <ul class="content-list">
+      <li>📚 我对脑启发AI、机器学习算法的论文解读与技术笔记</li>
+      <li>🔬 科研工具、LaTeX、集群使用的保姆级教程</li>
+      <li>✍️ 我记录的生活故事与人物随笔</li>
+      <li>📊 我的研究成果、开源项目与数据分享</li>
+    </ul>
+    <p class="content-text">
+      如果你对我的研究、内容感兴趣，或者想交流合作，欢迎随时联系我~
+    </p>
+  </div>
+</div>
+
+<!-- 交互逻辑JS -->
+<script>
+// 等待页面加载完成
+window.onload = function() {
+  // 获取所有元素
+  const cardView = document.getElementById('cardView');
+  const allCards = document.querySelectorAll('.info-card');
+  const allContents = document.querySelectorAll('.content-container');
+  const allBackBtns = document.querySelectorAll('.back-btn');
+
+  // 卡片点击事件：展开对应内容
+  allCards.forEach(card => {
+    card.addEventListener('click', function() {
+      // 获取要展开的内容id
+      const targetId = this.getAttribute('data-target');
+      const targetContent = document.getElementById(`${targetId}-content`);
+
+      // 隐藏卡片视图
+      cardView.classList.add('hidden');
+      // 显示目标内容
+      allContents.forEach(content => content.classList.remove('active'));
+      targetContent.classList.add('active');
+
+      // 滚动到页面顶部
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // 返回按钮点击事件：回到卡片视图
+  allBackBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // 隐藏所有内容
+      allContents.forEach(content => content.classList.remove('active'));
+      // 显示卡片视图
+      cardView.classList.remove('hidden');
+
+      // 滚动到页面顶部
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+};
+</script>
