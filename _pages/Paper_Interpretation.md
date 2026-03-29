@@ -94,7 +94,8 @@ details[open] .details-content {
 .paper-summary {
   margin: 0;
   color: #495057;
-  line-height: 1.6;
+  font-size: 0.85em !important;
+  line-height: 1.5 !important; /* 中文推荐 1.4–1.6 */
 }
 .paper-summary strong {
   color: #212529;
@@ -120,7 +121,7 @@ summary a:hover {
   <span class="details-arrow"></span>
 </summary>
 <div class="details-content">
-  <p class="paper-summary"><strong>核心概括：</strong>受海马体长时记忆机制启发，用图结构（KG）解决传统 RAG 无法跨段落关联信息的问题；但仅在多跳关联任务上有优势，基础问答效果反而不如普通 RAG。</p>
+  <p class="paper-summary"><strong>Brief Intro：</strong>受海马体-皮层的Key-Value机制启发，用图结构（KG）解决传统 RAG 无法跨段落关联信息的问题。最有意思的点在于其思路是把模型结构和大脑结构对齐，如“皮层-LLM；海马旁回-Retrieve Encoders；海马体-KG+PPR算法”。但仅在多跳关联任务上有优势，基础问答效果反而不如普通 RAG。</p>
 </div>
 </details>
 
