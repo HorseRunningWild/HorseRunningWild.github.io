@@ -148,7 +148,7 @@ author_profile: true
       {% include about-academic.html %}
     </div>
 
-    <div id="content-reallife" class="content-slot" style="display: none;">
+    <div id="content-real-life" class="content-slot" style="display: none;">
       {% include about-reallife.html %}
     </div>
 
@@ -168,7 +168,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const mainContainer = document.getElementById('main');
 
   // 定义打开逻辑
-  function openPortalContent() {
+  function openPortalContent(contentType) {
+    const selectedContent = document.getElementById(`content-${contentType}`);
+    if (!selectedContent) {
+      console.warn(`Content slot not found: content-${contentType}`);
+      return;
+    }
+
     // 1. 隐藏入口
     portal.style.opacity = '0';
     setTimeout(() => {
@@ -182,23 +188,29 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebar.setAttribute('style', 'display: block !important; opacity: 1 !important; width: 25% !important;');
       }
 
-      // 4. 显示正文内容
+      // 4. 显示对应正文内容
+      document.querySelectorAll('.content-slot').forEach(slot => {
+        slot.style.display = 'none';
+      });
+      selectedContent.style.display = 'block';
+
+      // 5. 显示正文区域
       content.style.display = 'block';
       setTimeout(() => {
         content.style.opacity = '1';
         content.style.transform = 'translateY(0)';
       }, 50);
 
-      // 5. 显示返回按钮
+      // 6. 显示返回按钮
       backBtn.style.display = 'block';
       window.scrollTo(0, 0);
     }, 400);
   }
 
   // 绑定点击事件到所有卡片
-  document.getElementById('btn-academic').addEventListener('click', openPortalContent);
-  document.getElementById('btn-real-life').addEventListener('click', openPortalContent);
-  document.getElementById('btn-website').addEventListener('click', openPortalContent);
+  document.getElementById('btn-academic').addEventListener('click', () => openPortalContent('academic'));
+  document.getElementById('btn-real-life').addEventListener('click', () => openPortalContent('real-life'));
+  document.getElementById('btn-website').addEventListener('click', () => openPortalContent('website'));
 
   // 返回按钮逻辑
   backBtn.addEventListener('click', function() {
