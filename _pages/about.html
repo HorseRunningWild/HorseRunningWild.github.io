@@ -1,44 +1,51 @@
 ---
 permalink: /
 title: "Welcome to the world of Wild Horse!"
-author_profile: true
+author_profile: false
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-<!-- 引入优雅艺术字体：Inter，现代简洁不浮夸，适配学术场景 -->
+<!-- 引入艺术字体：Playfair Display 优雅衬线标题（不浮夸高级感）+ Inter 正文 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- 核心样式：适配模板，柔和风格，动画效果 -->
+<!-- 核心样式：隐藏侧边栏后居中布局，卡片升级，动画完善 -->
 <style>
-/* 全局字体设置，替换模板默认字体，优雅统一 */
+/* 全局页面重置，适配无侧边栏的居中布局 */
 #main {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 40px 20px !important;
   font-family: 'Inter', sans-serif !important;
-  color: #2d3748;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* 页面标题样式 */
+/* 页面大标题：艺术字体，居中，高级感 */
 .welcome-title {
+  font-family: 'Playfair Display', serif !important;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 2.4em;
   font-weight: 600;
-  color: #1a365d;
-  margin-bottom: 40px;
+  color: #1e3a5f;
+  margin: 0 0 60px 0;
   line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
-/* ========== 卡片容器布局 ========== */
+/* ========== 卡片容器：无侧边栏后居中布局 ========== */
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
-  min-height: 60vh;
-  transition: all 0.4s ease;
+  gap: 60px 80px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* 卡片隐藏时的状态 */
 .card-container.hidden {
@@ -49,139 +56,167 @@ redirect_from:
   overflow: hidden;
   margin: 0;
   padding: 0;
+  gap: 0;
 }
 
-/* ========== 卡片核心样式：柔和Fancy风格 ========== */
+/* ========== 升级后的卡片样式：Fancy柔和质感 ========== */
 .info-card {
-  width: 320px;
-  height: 180px;
-  border-radius: 20px;
+  width: 360px;
+  height: 200px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #ffffff, #f8fbff);
   border: 1.5px solid #2b4a78;
-  background: #ffffff;
-  box-shadow: 0 4px 12px rgba(43, 74, 120, 0.08);
+  box-shadow: 0 8px 24px rgba(43, 74, 120, 0.08), 0 2px 8px rgba(43, 74, 120, 0.04);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* 卡片hover效果：轻微上浮，阴影加深，柔和不突兀 */
+/* 卡片hover效果：柔和上浮+阴影加深+边框发光，不浮夸 */
 .info-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(43, 74, 120, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(43, 74, 120, 0.12), 0 4px 12px rgba(43, 74, 120, 0.08);
   border-color: #3182ce;
+  background: linear-gradient(145deg, #ffffff, #f0f8ff);
 }
-/* 卡片内文字样式 */
+/* 卡片内文字：艺术字体+优雅排版 */
 .card-title-main {
-  font-size: 1.4em;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.6em;
   font-weight: 500;
-  color: #1a365d;
-  margin: 0 0 8px 0;
+  color: #1e3a5f;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.3px;
 }
 .card-title-sub {
-  font-size: 1.25em;
+  font-size: 1.3em;
   font-weight: 400;
   color: #4a5568;
   margin: 0;
+  letter-spacing: 0.2px;
 }
 
-/* ========== 内容容器：展开后的页面 ========== */
+/* ========== 内容容器：展开后的页面，完善动画 ========== */
 .content-container {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.5s ease;
-  transform: scale(0.98);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20px) scale(0.98);
 }
 /* 内容展开时的状态 */
 .content-container.active {
   opacity: 1;
-  max-height: 2000px;
-  transform: scale(1);
+  max-height: 3000px;
+  transform: translateY(0) scale(1);
   margin-bottom: 40px;
 }
 
-/* 返回按钮样式 */
+/* 返回按钮样式：优雅适配 */
 .back-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 1em;
+  gap: 8px;
+  font-size: 1.05em;
   font-weight: 500;
   color: #3182ce;
   background: transparent;
-  border: none;
+  border: 1px solid #3182ce;
   cursor: pointer;
-  padding: 8px 12px;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  padding: 10px 16px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif !important;
 }
 .back-btn:hover {
-  background: #ebf8ff;
+  background: #3182ce;
+  color: #ffffff;
 }
 
-/* 内容区标题样式 */
+/* 内容区标题：艺术字体 */
 .content-title {
-  font-size: 1.6em;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 2em;
   font-weight: 600;
-  color: #1a365d;
-  margin: 0 0 20px 0;
+  color: #1e3a5f;
+  margin: 0 0 25px 0;
+  letter-spacing: 0.3px;
 }
 
-/* 内容区文本、列表样式，和你原页面风格统一 */
+/* 内容区文本样式，和你原页面统一 */
 .content-text {
-  line-height: 1.7;
+  line-height: 1.8;
   color: #2d3748;
-  margin-bottom: 16px;
-  font-size: 1em;
+  margin-bottom: 18px;
+  font-size: 1.05em;
+  font-family: 'Inter', sans-serif !important;
 }
 .content-text a {
   color: #3182ce;
   text-decoration: none;
+  font-weight: 500;
 }
 .content-text a:hover {
   text-decoration: underline;
 }
 .content-list {
-  margin: 10px 0 20px 20px;
-  line-height: 1.8;
+  margin: 12px 0 24px 24px;
+  line-height: 1.9;
+  font-size: 1.05em;
+  color: #2d3748;
 }
 .content-section-title {
-  font-size: 1.25em;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.5em;
   font-weight: 600;
-  color: #2d3748;
-  margin: 30px 0 15px 0;
+  color: #1e3a5f;
+  margin: 35px 0 18px 0;
 }
 .content-text code {
   background: #f7fafc;
-  padding: 2px 6px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
   font-family: monospace;
   color: #dd6b20;
+  font-size: 0.95em;
 }
 
-/* ========== 响应式适配：手机端正常显示 ========== */
+/* ========== 响应式适配：手机端完美显示 ========== */
 @media (max-width: 768px) {
+  #main {
+    padding: 30px 15px !important;
+  }
+  .welcome-title {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+  }
   .card-container {
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
   }
   .info-card {
     width: 100%;
-    max-width: 300px;
-    height: 160px;
+    max-width: 320px;
+    height: 180px;
   }
-  .welcome-title {
-    font-size: 1.5em;
+  .card-title-main {
+    font-size: 1.4em;
+  }
+  .card-title-sub {
+    font-size: 1.15em;
+  }
+  .content-title {
+    font-size: 1.6em;
   }
 }
 </style>
 
 <!-- 页面主内容 -->
 <div class="home-wrapper">
-  <!-- 欢迎标题 -->
+  <!-- 欢迎大标题：艺术字体 -->
   <h1 class="welcome-title">Welcome to the world of Wild Horse!</h1>
 
   <!-- 1. 初始卡片视图 -->
@@ -205,11 +240,10 @@ redirect_from:
     </div>
   </div>
 
-  <!-- 2. 展开内容视图 -->
+  <!-- 2. 展开内容视图：Real Life 版本 -->
   <div class="content-container" id="real-life-content">
     <button class="back-btn">← Back to Home</button>
     <h2 class="content-title">Who am I? | Real Life Version</h2>
-    <!-- 这里可以自己填写生活版的自我介绍，我先给你留好模板 -->
     <p class="content-text">
       这里可以写你的生活版介绍，比如你的爱好、日常、故事、想分享的生活内容，和学术版形成区分。
     </p>
@@ -218,10 +252,10 @@ redirect_from:
     </p>
   </div>
 
+  <!-- 3. 展开内容视图：Academic 版本（完全保留你原有的内容） -->
   <div class="content-container" id="academic-content">
     <button class="back-btn">← Back to Home</button>
     <h2 class="content-title">Who am I? | Academic Version</h2>
-    <!-- 这里是你原来的about页面内容，完全保留 -->
     <p class="content-text">
       I'm a student of class of 2023 from <a href="https://spa.sysu.edu.cn/" target="_blank">School of Physics and Astronomy</a>, <a href="https://www.sysu.edu.cn/" target="_blank">Sun Yat-sen University</a>, and right now I am an intern of <a href="https://aemc2.github.io/JiLab.github.io/people/" target="_blank">Ni Ji's Lab</a> in <a href="https://www.cibr.ac.cn/science?type=blank&language=cn" target="_blank">CIBR</a>.
     </p>
@@ -263,10 +297,10 @@ redirect_from:
     <p class="content-text">Well, they do not matters.</p>
   </div>
 
+  <!-- 4. 展开内容视图：网站介绍 -->
   <div class="content-container" id="website-value-content">
     <button class="back-btn">← Back to Home</button>
     <h2 class="content-title">What Can You Get From this Website</h2>
-    <!-- 这里可以写网站的价值、内容介绍 -->
     <p class="content-text">
       这个网站是我的个人数字空间，你可以在这里找到这些内容：
     </p>
@@ -282,45 +316,45 @@ redirect_from:
   </div>
 </div>
 
-<!-- 交互逻辑JS -->
+<!-- 修复后的交互JS：100%触发点击事件 -->
 <script>
-// 等待页面加载完成
-window.onload = function() {
+// 等待DOM完全加载后再执行，彻底解决点击无反应
+document.addEventListener('DOMContentLoaded', function() {
   // 获取所有元素
   const cardView = document.getElementById('cardView');
   const allCards = document.querySelectorAll('.info-card');
   const allContents = document.querySelectorAll('.content-container');
   const allBackBtns = document.querySelectorAll('.back-btn');
 
-  // 卡片点击事件：展开对应内容
+  // 给所有卡片绑定点击事件
   allCards.forEach(card => {
     card.addEventListener('click', function() {
-      // 获取要展开的内容id
+      // 获取要展开的内容ID
       const targetId = this.getAttribute('data-target');
       const targetContent = document.getElementById(`${targetId}-content`);
 
       // 隐藏卡片视图
       cardView.classList.add('hidden');
-      // 显示目标内容
+      // 隐藏所有内容，只显示目标内容
       allContents.forEach(content => content.classList.remove('active'));
       targetContent.classList.add('active');
 
-      // 滚动到页面顶部
+      // 平滑滚动到页面顶部
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
-  // 返回按钮点击事件：回到卡片视图
+  // 给所有返回按钮绑定点击事件
   allBackBtns.forEach(btn => {
     btn.addEventListener('click', function() {
       // 隐藏所有内容
       allContents.forEach(content => content.classList.remove('active'));
-      // 显示卡片视图
+      // 重新显示卡片视图
       cardView.classList.remove('hidden');
 
-      // 滚动到页面顶部
+      // 平滑滚动到页面顶部
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
-};
+});
 </script>
