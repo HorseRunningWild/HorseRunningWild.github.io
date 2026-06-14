@@ -1,0 +1,169 @@
+{{- define "main" -}}
+{{- $avatar := resources.Get "avatar.jpg" -}}
+{{- $avatarBg := resources.Get "avatar-homepage-hero/bg.png" -}}
+{{- $avatarFg := resources.Get "avatar-homepage-hero/fg.png" -}}
+
+<div id="home-portfolio" class="home-portfolio">
+    <div class="page-wrapper">
+        <header class="hero">
+            {{- if and $avatarBg $avatarFg }}
+            <div class="hero-avatar">
+                <div class="hero-avatar-stage">
+                    <img
+                        draggable="false"
+                        class="hero-avatar-bg"
+                        src="{{ $avatarBg.RelPermalink }}"
+                        alt=""
+                        width="180"
+                        height="180"
+                    >
+                </div>
+                <div class="hero-avatar-figure">
+                    <img
+                        draggable="false"
+                        class="hero-avatar-fg"
+                        src="{{ $avatarFg.RelPermalink }}"
+                        alt="Stylized horse-headed portrait of Zixing Jia"
+                        width="210"
+                        height="210"
+                    >
+                </div>
+            </div>
+            {{- else if $avatar }}
+            <div class="hero-avatar">
+                <img
+                    draggable="false"
+                    src="{{ $avatar.RelPermalink }}"
+                    alt="Portrait of Zixing Jia"
+                    width="168"
+                    height="168"
+                >
+            </div>
+            {{- end }}
+            <h1>Zixing Jia</h1>
+            <p class="subtitle">Undergraduate Student in Physics</p>
+            <div class="affiliations">
+                <span>School of Physics and Astronomy, Sun Yat-sen University</span>
+                <span>Ni Ji's Lab, Chinese Institute for Brain Research, Beijing</span>
+            </div>
+            <div class="hero-links">
+                <a href="mailto:jiazx5@mail2.sysu.edu.cn" class="contact-link" aria-label="Email Zixing Jia">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    jiazx5@mail2.sysu.edu.cn
+                </a>
+                <a href="https://github.com/HorseRunningWild/" target="_blank" rel="noopener" class="contact-link" aria-label="Visit Zixing Jia on GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.5a3.04 3.04 0 0 0-.8-2.1c2.6-.3 5.3-1.3 5.3-5.9a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.3 1.3a11.3 11.3 0 0 0-6 0C6.5 3.8 5.5 4.1 5.5 4.1a4.3 4.3 0 0 0-.1 3.2 4.6 4.6 0 0 0-1.3 3.2c0 4.6 2.7 5.6 5.3 5.9a3.04 3.04 0 0 0-.8 2.1V22"></path>
+                    </svg>
+                    github.com/HorseRunningWild
+                </a>
+            </div>
+            <button type="button" class="scroll-cue" aria-label="Scroll to About section">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 5v14"></path>
+                    <polyline points="6 13 12 19 18 13"></polyline>
+                </svg>
+            </button>
+        </header>
+
+        <section class="section js-about-section">
+            <div class="section-header js-about-header">
+                <div class="section-tag">About</div>
+            </div>
+            <div class="about-card js-about-card">
+                <p>
+                    I am an undergraduate student at Sun Yat-sen University <strong>(Class of 2027)</strong>, majoring in Physics with a strong interdisciplinary focus on <strong>brain-inspired computation</strong> and <strong>neuro-AI systems</strong>. My background spans optical interferometry, deep learning, and computational neuroscience.
+                </p>
+                <p>
+                    I am currently a research intern at the <strong>Chinese Institute for Brain Research, Beijing (CIBR)</strong>, working on explicit neural reasoning architectures.
+                </p>
+                <span class="highlight-tag">Research Intern @ CIBR Beijing</span>
+            </div>
+        </section>
+
+        <section class="section js-interests-section">
+            <div class="section-header">
+                <div class="section-tag">Research Interests</div>
+                <h2 class="section-title">Physics x Neuroscience x AI</h2>
+            </div>
+            <ul class="interest-list">
+                <li class="interest-item">
+                    <span class="interest-index">01</span>
+                    <div class="interest-content">
+                        <h3>Brain-Inspired Structural Modeling</h3>
+                        <p>Designing neural architectures grounded in biological structures to enable explicit, interpretable reasoning.</p>
+                    </div>
+                </li>
+                <li class="interest-item">
+                    <span class="interest-index">02</span>
+                    <div class="interest-content">
+                        <h3>AI for Neuroscience</h3>
+                        <p>Developing computational tools and machine learning methods to model neural dynamics, decode brain representations, and bridge biophysical mechanisms with algorithmic principles.</p>
+                    </div>
+                </li>
+                <li class="interest-item">
+                    <span class="interest-index">03</span>
+                    <div class="interest-content">
+                        <h3>Brain-Inspired AI</h3>
+                        <p>Building next-generation AI systems such as memory-augmented networks and neuro-symbolic reasoners that inherit robustness, efficiency, and generalization from biological intelligence.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section js-publications-section">
+            <div class="section-header">
+                <div class="section-tag">Publications</div>
+                <h2 class="section-title">Journal Articles</h2>
+            </div>
+            <div class="pub-grid">
+                <article class="pub-card">
+                    <span class="pub-badge">Accepted - JCR Q1</span>
+                    <h3 class="pub-title">Multimodal Fusion Network for Microdisplacement Measurement via Michelson Interferometer</h3>
+                    <p class="pub-authors"><strong>Z. Jia</strong> et al.</p>
+                    <p class="pub-venue">Optics and Laser Technology (CAS Zone 2 Top Optics Journal), 2025.</p>
+                    <p class="pub-desc">Developed a dual-head multimodal fusion network (MFN) to resolve lambda/2 phase ambiguity and achieve nanoscale displacement inference.</p>
+                    <div class="pub-links">
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0030399226005761" target="_blank" rel="noopener" class="pub-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            Paper
+                        </a>
+                        <a href="https://github.com/HorseRunningWild/MFN-for-Micro-displacement-Measurement-" target="_blank" rel="noopener" class="pub-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Code
+                        </a>
+                    </div>
+                </article>
+
+                <article class="pub-card">
+                    <span class="pub-badge">Under Review</span>
+                    <h3 class="pub-title">Neural Structural Reasoner: A Brain-inspired Architecture for Reasoning over Structured Knowledge</h3>
+                    <p class="pub-authors"><strong>Z. Jia</strong> et al.</p>
+                    <p class="pub-venue">In preparation for NeurIPS 2026 Main Conference.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section js-patents-section">
+            <div class="section-header">
+                <div class="section-tag">Patents</div>
+            </div>
+            <div class="patent-card">
+                <h3 class="patent-title">Interferometric Micro-Displacement Measurement Method and System Based on Multimodal Fusion</h3>
+                <p class="patent-meta"><strong>First Inventor</strong> - Application No.: 202511848783.3 - <em>Passed Preliminary Examination</em></p>
+            </div>
+        </section>
+
+        <div class="home-footer">Last updated: April 2026</div>
+    </div>
+</div>
+{{- end -}}
