@@ -1,1 +1,1 @@
-> For LLM agents, please read the `AGENT\PROJECT.md` file before executing any tasks or modifications.
+> For LLM agents, please read the `AGENTS.md` file at the repository root before executing any tasks or modifications.
