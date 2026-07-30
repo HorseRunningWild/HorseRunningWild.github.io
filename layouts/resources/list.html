@@ -1,0 +1,164 @@
+{{- define "main" -}}
+<div class="resources-page">
+    <div class="resources-wrapper">
+        <header class="resources-header">
+            <h1>Resources</h1>
+            <p class="resources-subtitle">Brain-Inspired Computation · SYSU Exam Kit</p>
+        </header>
+
+        {{/* ===== Reading Roadmap ===== */}}
+        <section class="resource-section">
+            <details class="resource-group" open>
+                <summary><span class="chevron"></span>Reading Roadmap</summary>
+                <div class="resource-group-content">
+
+                    <details class="resource-sub" open>
+                        <summary><span class="chevron-sm"></span>Brain-inspired memory &amp; retrieval</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://laser-sleet-3b9.notion.site/HippoRAG-NIPS-2024-304ca7f3face80b89741f0889f51a91b" target="_blank" rel="noopener">Hippo RAG (2024 NeurIPS)</a></li>
+                            <li><a href="https://laser-sleet-3b9.notion.site/Hippo-RAG-2-ICML-2025-304ca7f3face802091fbf3efeb3727c1" target="_blank" rel="noopener">Hippo RAG 2 (2025 ICML)</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/jAKaVVMzrh_pVMyWGi627A" target="_blank" rel="noopener">【Vector-HaSH】原来我们的大脑是这样记忆</a></li>
+                            <li><a href="https://laser-sleet-3b9.notion.site/Hopfield-Network-Is-All-You-Need-2f6ca7f3face80468dedef08947e9309" target="_blank" rel="noopener">Hopfield Network Is All You Need</a></li>
+                            <li><a href="https://laser-sleet-3b9.notion.site/ECC-Hopfield-264ca7f3face801b8b14da4933e46ba3" target="_blank" rel="noopener">Bipartite expander Hopfield networks (NeurIPS 2019)</a></li>
+                            <li><a href="https://laser-sleet-3b9.notion.site/Predictive-Attractor-Models-2b5ca7f3face8056b114f8525d572f05" target="_blank" rel="noopener">Predictive Attractor Models (2024 NeurIPS)</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>Brain-inspired reasoning &amp; graph augmentation</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://laser-sleet-3b9.notion.site/Retrieval-Augmented-Generation-for-Knowledge-Intensive-NLP-Tasks-302ca7f3face805b9744f7ee4d03acbd" target="_blank" rel="noopener">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (NeurIPS 2020)</a></li>
+                            <li><a href="https://laser-sleet-3b9.notion.site/Causal-Graphs-Meet-Thoughts-Enhancing-Complex-Reasoning-in-Graph-Augmented-LLMs-302ca7f3face8093bf7ef21f08569b9e" target="_blank" rel="noopener">Causal Graphs Meet Thoughts: Enhancing Complex Reasoning in Graph-Augmented LLMs</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>Spatial cognition &amp; hippocampal modeling</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://laser-sleet-3b9.notion.site/A-multi-region-brain-model-2b6ca7f3face80f395d1eb9c7d5d1750" target="_blank" rel="noopener">A Multi-Region Brain Model (2025 ICML)</a></li>
+                            <li><a href="https://laser-sleet-3b9.notion.site/The-chicken-and-egg-problem-of-grid-cells-and-place-cells-2f9ca7f3face801bae08c1fe55775ece" target="_blank" rel="noopener">The chicken and egg problem of grid cells and place cells</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/Ti9AtEJgodi6_TCiEUBfyw" target="_blank" rel="noopener">从困在时间里的人到连续吸引子：对海马体的计算神经科学建模</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>Physical roots of generative models</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://mp.weixin.qq.com/s/VQa5z-LCXQ2uei5uPXL7VA" target="_blank" rel="noopener">【物理与机器学习】从Hopfield到玻尔兹曼机</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/mazg3KCqlMtBNRo_oBKlTQ" target="_blank" rel="noopener">【物理与机器学习】从非平衡热力学到扩散模型</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>Foundations (ML / RL)</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://mp.weixin.qq.com/s/pxWGzq93-0bVfBVHS_w4eg" target="_blank" rel="noopener">【让机器像人一样推理】从VAE到因果VAE</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/DjOZaw-LnK1YN7PbNYvNtQ" target="_blank" rel="noopener">算法小白从决策树到XGboost</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/pv63Hfuxfv4Qtzbex8VIig" target="_blank" rel="noopener">【强化学习入门】I：基本原理与概念</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/Ks8x2C7qKhjsEcZAJH4hhg" target="_blank" rel="noopener">【强化学习入门】II：从策略梯度到PPO</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/F_zzPF_dw6Y1ApPJcYUC6w" target="_blank" rel="noopener">【强化学习入门】III：从Q-learning到DQN</a></li>
+                        </ul>
+                    </details>
+
+                </div>
+            </details>
+        </section>
+
+        {{/* ===== Study Notes ===== */}}
+        <section class="resource-section">
+            <details class="resource-group" open>
+                <summary><span class="chevron"></span>Study Notes · 期末资料库</summary>
+                <div class="resource-group-content">
+
+                    <details class="resource-sub" open>
+                        <summary><span class="chevron-sm"></span>数学 Mathematics</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://github.com/HorseRunningWild/Linear-Algebra" target="_blank" rel="noopener">线性代数</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Adavanced-Mathematics-I" target="_blank" rel="noopener">高等数学 I（上 / 下）</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Method-of-Mathmatical-Physics" target="_blank" rel="noopener">数学物理方法</a> · <a href="https://mp.weixin.qq.com/s/hpiSkhap__xaPKUVpwKCeQ" target="_blank" rel="noopener">【数学物理方法】TeX版习题精解+期末真题+完整笔记</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Pro-a-Sta-Intro-of-MZD-Thought-" target="_blank" rel="noopener">概率论与数理统计</a> · <a href="https://mp.weixin.qq.com/s/fH1nWQwR9bY_epTukC7K0w" target="_blank" rel="noopener">【概率统计】必背公式+真题解</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>物理 Physics</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://github.com/HorseRunningWild/Mechanics" target="_blank" rel="noopener">力学</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Theoretical-Mechanics" target="_blank" rel="noopener">理论力学</a> · <a href="https://mp.weixin.qq.com/s/xnzw123PcYCWBMS0oAxdTQ" target="_blank" rel="noopener">【理论力学】习题精解+复习资料！</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/AtomicPhysics" target="_blank" rel="noopener">原子物理学</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Thermodynamics" target="_blank" rel="noopener">热力学与统计物理</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Electrodynamics" target="_blank" rel="noopener">电动力学</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Elementary-Astronomy" target="_blank" rel="noopener">基础天文学</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>工科基础 Engineering basics</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://github.com/HorseRunningWild/Electron-Technique" target="_blank" rel="noopener">电子技术</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>实验 Labs</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://github.com/HorseRunningWild/Phy-Basic-Experiments-II" target="_blank" rel="noopener">基础物理实验 II（LaTeX 报告模板）</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Experiments-in-electronic-tech" target="_blank" rel="noopener">电子技术实验 I（LaTeX 报告模板）</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>思政课 Ideology courses</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://github.com/HorseRunningWild/Pro-a-Sta-Intro-of-MZD-Thought-" target="_blank" rel="noopener">毛泽东思想概论</a> · <a href="https://mp.weixin.qq.com/s/sqvGo8cDfQ3PzWaZefRVdw" target="_blank" rel="noopener">【中山大学毛概】笔记+思考题解析+【真题！】</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Outline-of-modern-history" target="_blank" rel="noopener">中国近现代史纲要</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/BasicPrincleofMarxism" target="_blank" rel="noopener">马克思主义基本原理</a></li>
+                            <li><a href="https://github.com/HorseRunningWild/Introduction-of-XJP-thought" target="_blank" rel="noopener">习近平新时代中国特色社会主义思想概论</a></li>
+                        </ul>
+                    </details>
+
+                </div>
+            </details>
+        </section>
+
+        {{/* ===== Research Toolkit ===== */}}
+        <section class="resource-section">
+            <details class="resource-group" open>
+                <summary><span class="chevron"></span>Research Toolkit · 科研新手工具箱</summary>
+                <div class="resource-group-content">
+
+                    <details class="resource-sub" open>
+                        <summary><span class="chevron-sm"></span>学术写作 Academic writing</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://mp.weixin.qq.com/s/oL29NYCLSGJIbMIYV57SjQ" target="_blank" rel="noopener">AI时代速通LaTeX：入门到够用</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/xUBXEYXl1VDQGR59xwSE_Q" target="_blank" rel="noopener">解决 PicGo上传 GitHub图床及Marp中Github图片编译常见难题指南</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>算力与集群 Compute &amp; clusters</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://mp.weixin.qq.com/s/VOHJmfnkkFMccCdOtGpI0A" target="_blank" rel="noopener">本地通过Vscode连接服务器完整流程</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/OYYN-gHTtRwdfEpZY2hkgw" target="_blank" rel="noopener">小白的Slurm集群：20min入门到够用</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/Q5JNwf0zOwL0YVLx9lnfgA" target="_blank" rel="noopener">集群环境变量管理：从“torch.nn()”到“module load cuda”</a></li>
+                        </ul>
+                    </details>
+
+                    <details class="resource-sub">
+                        <summary><span class="chevron-sm"></span>实验与工程习惯 Lab &amp; engineering</summary>
+                        <ul class="resource-list">
+                            <li><a href="https://mp.weixin.qq.com/s/Io0OKFk9_cKJHnBy3Zm2Qg" target="_blank" rel="noopener">PyVISA 实战：用 Python 控制物理实验室常用仪器</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/HaLl8W0h02wamkk9qpAZYA" target="_blank" rel="noopener">为什么我们需要if __name__ == __main__</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/fiNPs8OjoasedDe_u0_60g" target="_blank" rel="noopener">小白如何学会完整挪用Github项目？（以pix2pix为例）</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/NTKQ6Igqlh6Njzpurx4s7g" target="_blank" rel="noopener">如何建立局域网连接私人笔记本与工作电脑？</a></li>
+                            <li><a href="https://mp.weixin.qq.com/s/igRvlbWaN-BJNxrZtSkCxg" target="_blank" rel="noopener">如何建立局域网连接私人笔记本与工作电脑(下)？</a></li>
+                        </ul>
+                    </details>
+
+                </div>
+            </details>
+        </section>
+
+    </div>
+</div>
+{{- end -}}

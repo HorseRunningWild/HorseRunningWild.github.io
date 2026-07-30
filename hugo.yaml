@@ -3,3 +3,9 @@ locale: en-us
 title: HorseRunningWild
 
 theme: ["PaperMod"]
+
+menu:
+  main:
+    - name: Resources
+      url: "/resources/"
+      weight: 10

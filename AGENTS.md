@@ -17,10 +17,11 @@ No test suite. Verify changes visually via `hugo server -D` or by inspecting `pu
 - **Theme**: PaperMod, vendored in `themes/PaperMod/`. Never edit files under `themes/`.
 - **Config**: single `hugo.yaml` at repo root.
 - **Homepage override**: `layouts/index.html` replaces the PaperMod home content while keeping its header/footer shell. All custom layout work lives in root `layouts/`.
-- **Homepage-only assets**: `layouts/_partials/extend_head.html` (fonts + CSS) and `extend_footer.html` (GSAP CDN + local JS) inject assets guarded by `{{ if .IsHome }}` so other pages are unaffected.
-- **Asset pipeline**: CSS/JS in `assets/` (`css/homepage.css`, `js/homepage-gsap.js`) processed through Hugo Pipes (`minify | fingerprint`); images via `resources.Get` (`avatar.jpg`, `avatar-homepage-hero/bg.png` + `fg.png`).
+- **Page-scoped head assets**: `layouts/_partials/extend_head.html` loads the shared Google Fonts (Newsreader + Inter) plus a page-specific stylesheet, gated by `{{ if or .IsHome (eq .Section "resources") }}` — homepage gets `css/homepage.css` (and the FOUC-guard inline script), the Resources section gets `css/resources.css`. `extend_footer.html` (GSAP CDN + local JS) stays homepage-only via `{{ if .IsHome }}`, so other pages are unaffected.
+- **Asset pipeline**: CSS/JS in `assets/` (`css/homepage.css`, `css/resources.css`, `js/homepage-gsap.js`) processed through Hugo Pipes (`minify | fingerprint`); images via `resources.Get` (`avatar.jpg`, `avatar-homepage-hero/bg.png` + `fg.png`).
+- **Resources section**: `content/resources/_index.md` (front matter only — `title` + `layout: list`) is rendered by the repo-level override `layouts/resources/list.html`, a single page that lists every resource as two-level native `<details>`/`<summary>` accordions (top groups: Reading Roadmap / Study Notes · 期末资料库 / Research Toolkit · 科研新手工具箱; sub-groups inside). No explanatory prose, no sub-pages — all links live on this one collapsible page. It is styled by `assets/css/resources.css`, which mirrors the homepage design tokens (serif headings, hairline rules, deep-teal accent) so the page reads as part of the same editorial system. Linked from the top navigation via `menu.main` in `hugo.yaml`. Content is bilingual EN/中文 mixed inline (no i18n language switch yet).
 - **Full-bleed bands**: sections that span the viewport (e.g. the About statement band) escape the content column with `margin-inline: calc(-50vw + 50%)`. Horizontal overflow is clipped at viewport level (`html { overflow-x: clip }` in `homepage.css`) — never on a content-width wrapper, or the bleed's paint gets cropped.
-- **Reserved / generated**: `content/`, `i18n/`, `data/`, `static/` are unused extension points for the multilingual rollout; `archetypes/default.md` is the content front-matter template; `tmp/` holds reference drafts outside the build; `public/` is a checked-in build snapshot, not a source of truth — do not hand-edit.
+- **Reserved / generated**: `i18n/`, `data/`, `static/` remain unused extension points for the multilingual rollout; `content/resources/` is the one active content section (see above); `archetypes/default.md` is the content front-matter template; `tmp/` holds reference drafts outside the build (including the old Jekyll snapshot that is the source for Resources content); `public/` is a checked-in build snapshot, not a source of truth — do not hand-edit.
 
 ## Design Language
 
@@ -49,7 +50,7 @@ The homepage is an **editorial / scholarly** layout, not a product page. Keep th
 ## Conventions
 
 - Custom layout work goes in root `layouts/`; theme files stay untouched.
-- Homepage assets stay scoped to `.IsHome` — no global CSS/JS leakage.
+- Page-specific assets stay scoped to their page/section (`.IsHome` for the homepage, `eq .Section "resources"` for Resources) — no global CSS/JS leakage.
 - Before changing source: inspect the actual codebase, translate the intent into concrete verifiable checkpoints, implement, then re-read the rendered result and confirm this file still matches the repository.
 - Keep this file minimal and accurate: record only what an agent cannot easily discover from the source, and update or remove anything that drifts from reality.
 
