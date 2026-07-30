@@ -8,7 +8,7 @@ Personal portfolio blog of Zixing Jia (贾梓杏), built with Hugo + PaperMod an
 |--------|---------|
 | Local dev server | `hugo server -D` |
 | Production build | `hugo --gc --minify` |
-| Deploy | Push to `master` → GitHub Actions builds Hugo `0.162.0` and publishes to GitHub Pages |
+| Deploy | Push to `main` → GitHub Actions builds Hugo `0.162.0` and publishes to GitHub Pages |
 
 No test suite. Verify changes visually via `hugo server -D` or by inspecting `public/`.
 
@@ -45,7 +45,7 @@ The homepage is an **editorial / scholarly** layout, not a product page. Keep th
 
 ## Publishing & Change Control
 
-`.github/workflows/hugo-pages.yml` triggers on pushes to `master`, installs Hugo `0.162.0`, builds in production mode, uploads `public/` as the Pages artifact, and deploys via the official Pages flow. Any change to architecture, directory responsibilities, theme integration, the multilingual approach, content organization, or the publishing flow must be reflected here — keep `AGENTS.md` synchronized with the real repository state at all times.
+`.github/workflows/hugo-pages.yml` triggers on pushes to `main`, installs Hugo `0.162.0`, builds in production mode, uploads `public/` as the Pages artifact, and deploys via the official Pages flow. Any change to architecture, directory responsibilities, theme integration, the multilingual approach, content organization, or the publishing flow must be reflected here — keep `AGENTS.md` synchronized with the real repository state at all times.
 
 ## Conventions
 
