@@ -167,6 +167,25 @@
     var last = null;
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    function ignite(i, t) {
+        glow[i] = 1;
+        var c = PASTELS[(Math.random() * PASTELS.length) | 0];
+        glowColor[i] = c;
+        for (var e = 0; e < edges.length; e++) {
+            if (edges[e][0] === i && Math.random() < 0.65) {
+                pulses.push({ e: e, t0: t, c: c });
+            }
+        }
+    }
+
+    /* Easter egg: clicking the hero name fires a small burst of activations */
+    window.addEventListener("wildhorse", function () {
+        var t = performance.now() / 1000;
+        for (var k = 0; k < 14; k++) {
+            ignite((Math.random() * N) | 0, t + Math.random() * 0.4);
+        }
+    });
+
     function frame(ts) {
         if (last === null) last = ts;
         var dt = Math.min((ts - last) / 1000, 0.1);
@@ -197,16 +216,7 @@
         /* spontaneous firing */
         var pFire = FIRE_RATE * dt / N;
         for (i = 0; i < N; i++) {
-            if (Math.random() < pFire) {
-                glow[i] = 1;
-                var c = PASTELS[(Math.random() * PASTELS.length) | 0];
-                glowColor[i] = c;
-                for (var e = 0; e < edges.length; e++) {
-                    if (edges[e][0] === i && Math.random() < 0.65) {
-                        pulses.push({ e: e, t0: t, c: c });
-                    }
-                }
-            }
+            if (Math.random() < pFire) ignite(i, t);
         }
 
         /* clear */
@@ -232,7 +242,7 @@
             var ea = edges[p.e][0], eb = edges[p.e][1];
             var L = Math.hypot(px[eb] - px[ea], py[eb] - py[ea]) + 1e-6;
             var travel = SPEED * scale;
-            var u = (t - p.t0) * travel / L;
+            var u = Math.max(0, (t - p.t0) * travel / L);
             if (u >= 1.15) {
                 if (glow[eb] < 0.85) {
                     glow[eb] = 0.85;

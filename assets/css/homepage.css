@@ -148,6 +148,7 @@ html[data-theme="dark"] .home-portfolio .page-wrapper {
     line-height: 1.05;
     color: var(--text-primary);
     margin-bottom: 0.3em;
+    user-select: none;
 }
 
 .home-portfolio .subtitle {
