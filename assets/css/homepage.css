@@ -380,17 +380,38 @@ html[data-theme="dark"] .home-portfolio .page-wrapper {
     padding-top: 0;
 }
 
-/* Opaque text blocks for the Research Interests section: only the
-   content column blocks out the neuron canvas; the side margins stay
-   transparent so the background remains visible around the text. */
+/* Frosted panels for the Research Interests section: the content
+   column blocks the neuron canvas with a translucent, blurred,
+   rounded surface instead of a hard opaque strip; side margins stay
+   transparent so the background still breathes around the text. */
 .home-portfolio .js-interests-section .section-header,
-.home-portfolio .js-interests-section .interest-list,
 .home-portfolio .js-interests-section .interest-item {
-    background: var(--bg-primary);
+    background: color-mix(in srgb, var(--bg-primary) 72%, transparent);
+    -webkit-backdrop-filter: blur(10px) saturate(1.05);
+    backdrop-filter: blur(10px) saturate(1.05);
+    border-radius: 14px;
+}
+
+.home-portfolio .js-interests-section .section-header {
+    padding: clamp(8px, 1.5vw, 14px) clamp(16px, 3vw, 28px);
+    margin-bottom: 14px;
+}
+
+.home-portfolio .js-interests-section .interest-list {
+    gap: 10px;
+}
+
+.home-portfolio .js-interests-section .interest-item {
+    border-top: none;
+    padding: clamp(18px, 2.8vw, 26px) clamp(16px, 3vw, 28px);
+}
+
+.home-portfolio .js-interests-section .interest-item:first-child {
+    padding-top: clamp(18px, 2.8vw, 26px);
 }
 
 .home-portfolio .interest-item:hover {
-    background: var(--bg-primary);
+    background: color-mix(in srgb, var(--bg-primary) 72%, transparent);
     transform: none;
 }
 
