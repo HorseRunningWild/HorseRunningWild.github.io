@@ -379,8 +379,17 @@ html[data-theme="dark"] .home-portfolio .page-wrapper {
     padding-top: 0;
 }
 
+/* Opaque text blocks for the Research Interests section: only the
+   content column blocks out the neuron canvas; the side margins stay
+   transparent so the background remains visible around the text. */
+.home-portfolio .js-interests-section .section-header,
+.home-portfolio .js-interests-section .interest-list,
+.home-portfolio .js-interests-section .interest-item {
+    background: var(--bg-primary);
+}
+
 .home-portfolio .interest-item:hover {
-    background: none;
+    background: var(--bg-primary);
     transform: none;
 }
 
