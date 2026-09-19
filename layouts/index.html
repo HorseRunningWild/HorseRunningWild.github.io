@@ -4,6 +4,7 @@
 {{- $avatarFg := resources.Get "avatar-homepage-hero/fg.png" -}}
 
 <div id="home-portfolio" class="home-portfolio">
+    <canvas id="neuron-bg" aria-hidden="true"></canvas>
     <div class="page-wrapper">
         <header class="hero">
             {{- if and $avatarBg $avatarFg }}
@@ -41,9 +42,10 @@
             </div>
             {{- end }}
             <h1>Zixing Jia</h1>
-            <p class="subtitle">Undergraduate Student in Physics</p>
+            <p class="subtitle">Physics x Neuroscience x AI</p>
             <div class="affiliations">
                 <span>School of Physics and Astronomy, Sun Yat-sen University</span>
+                <span>Academy for Advanced Interdisciplinary Studies, Peking University</span>
                 <span>Ni Ji's Lab, Chinese Institute for Brain Research, Beijing</span>
             </div>
             <div class="hero-links">
@@ -165,7 +167,7 @@
             </div>
         </section>
 
-        <div class="home-footer">Last updated: April 2026</div>
+        <div class="home-footer">Last updated: September 2026</div>
     </div>
 </div>
 {{- end -}}

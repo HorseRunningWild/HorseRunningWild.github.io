@@ -80,6 +80,21 @@ html[data-theme="dark"] .home-portfolio .page-wrapper {
     text-align: center;
 }
 
+/* ----- Neuron background canvas ----- */
+/* Fixed full-viewport layer behind all content (page background is
+   propagated to the viewport canvas, so z-index:-1 still paints above
+   it and below the content flow). Fades out toward the bottom of the
+   viewport so scrolling sections stay readable. */
+#neuron-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, black 55%, transparent 95%);
+    mask-image: linear-gradient(180deg, black 55%, transparent 95%);
+}
+
+
 .home-portfolio .hero-avatar {
     position: relative;
     width: clamp(160px, 24vw, 200px);
