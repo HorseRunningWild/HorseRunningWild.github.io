@@ -13,4 +13,8 @@
 {{- $script := . | minify | fingerprint -}}
 <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 {{- end -}}
+{{- with resources.Get "js/pub-cards.js" -}}
+{{- $script := . | minify | fingerprint -}}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{- end -}}
 {{- end -}}
